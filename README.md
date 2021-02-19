@@ -16,6 +16,7 @@ A messaging board for students and academics
 ## TODO
 - Main: Create framework [head,nav] (Neil) 
 - Database: script for generating "dummy" data (George)
+- Login System: Create a the Login & Signup pages (Will W)
 
 ## Tools    
  - python-django
