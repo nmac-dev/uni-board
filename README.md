@@ -6,9 +6,9 @@ A messaging board for students and academics
  - [TODO](#TODO)
  - [Tools](#Tools)
  - [Operation](#Operation)
-  - [Github](##Github)
-  - [Local Server](##Server)
-   - [Commands](###Commands) 
+   - [Github](##Github)
+   - [Local Server](##Server)
+     - [Commands](###Commands) 
 
 ## Features
  - Home Page (default)
