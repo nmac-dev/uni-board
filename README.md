@@ -35,14 +35,15 @@ This is the CL argument for the server
 [ python manage.py < command > ] 
 #### Commands
 Run these commands when you add/remove/move any django files  
- - makemigrations  
- - migrate    
+ - makemigrations
+ - migrate
+
 Starts the server in the current terminal  
- - runserver  
+ - runserver
 
 Create a super user that can be access in the "/admin" page  
- - createsuperuser  
+ - createsuperuser
 
 Creates a new "app" (kinda like a module) in the src directory  
- - startapp < appname >  
+ - startapp < appname >
 
