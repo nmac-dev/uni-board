@@ -38,9 +38,10 @@ Run these commands when you add/remove/move any django files
  - makemigrations  
  - migrate    
 Starts the server in the current terminal
- - runserver    
+ - runserver  
+
 Create a super user that can be access in the "/admin" page
- - createsuperuser    
- Creates a new "app" (kinda like a module) in the src directory
+ - createsuperuser
+Creates a new "app" (kinda like a module) in the src directory
  - startapp < appname >    
 
