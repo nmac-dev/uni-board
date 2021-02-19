@@ -6,6 +6,9 @@ A messaging board for students and academics
  - [TODO](#TODO)
  - [Tools](#Tools)
  - [Operation](#Operation)
+  - [Github](##Github)
+  - [Local Server](##Server)
+   - [Commands](###Commands) 
 
 ## Features
  - Home Page (default)
@@ -27,7 +30,7 @@ A messaging board for students and academics
 ### Github  
  - PLEASE: create a new branch for your development work  
  - DO NOT: push directly to the master branch  
-### Local Server  
+### Server  
 This is the CL argument for the server  
 [ python manage.py < command > ] 
 #### Commands
