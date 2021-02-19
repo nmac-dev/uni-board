@@ -3,6 +3,7 @@
 A messaging board for students and academics
 ## Contents  
  - [Features](#Features)
+ - [TODO](#TODO)
  - [Tools](#Tools)
  - [Operation](#Operation)
 
@@ -11,6 +12,10 @@ A messaging board for students and academics
  - Message Board
  - Quiz Completion/Creation
  - LeaderBoards
+
+## TODO
+- Main: Create framework [head,nav] (Neil) 
+- Database: script for generating "dummy" data (George)
 
 ## Tools    
  - python-django
