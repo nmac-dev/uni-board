@@ -24,7 +24,13 @@ A messaging board for students and academics
  - bootstrap  
 
 ## Operation  
-python manage.py < command >  
+### Github  
+ - PLEASE: create a new branch for your development work  
+ - DO NOT: push directly to the master branch  
+ - DO: Only merge a working & tested branch into the master branch  
+### Local Server  
+This is the CL argument for the server  
+[ python manage.py < command > ] 
  - makemigrations  
  - migrate  
  - runserver  
