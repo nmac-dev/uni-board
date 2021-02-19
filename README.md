@@ -2,12 +2,19 @@
 
 A messaging board for students and academics
 ## Contents  
+ - [Features](#Features)
  - [Tools](#Tools)
  - [Operation](#Operation)
 
+## Features
+ - Home Page (default)
+ - Message Board
+ - Quiz Completion/Creation
+ - LeaderBoards
+
 ## Tools    
- - virtualenv  
- - python-django  
+ - python-django
+ - bootstrap  
 
 ## Operation  
 python manage.py < command >  
@@ -17,4 +24,3 @@ python manage.py < command >
  - createsuperuser 
  - startapp < appname > 
 
- 
