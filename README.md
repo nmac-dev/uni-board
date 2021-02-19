@@ -23,8 +23,8 @@ A messaging board for students and academics
 - Message_Board: Basic functionality [post, reply] (Tu)
 
 ## Tools    
- - python-django
- - bootstrap  
+ - python-django 3.1.7
+ - bootstrap v5.0.0-beta2
 
 ## Operation  
 ### Github  
