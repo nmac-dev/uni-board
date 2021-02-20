@@ -4,15 +4,21 @@
     <!--Meta-->
     <title>Uni-Board</title>
     <!--Scripts-->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}">
 </head>
 <!--Body-->
 <body>
+    <!--Header-->
+    <div id="base_header">
+        <img>Logo For Uni Board</img>
+    </div>
     <!--Nav-->
-    <div class="">
+    <div id="base_nav">
         <a href="/">Home</a>
-        <a href="/messageboard">Home</a>
-        <a href="/quiz">Home</a>
-        <a href="/leaderboard">Home</a>
+        <a href="/messageboard">Message Board</a>
+        <a href="/quiz">Quiz</a>
+        <a href="/leaderboard">Leaderboard</a>
     </div>
     <!--Main_Content-->
     <div id="main_content" name="main_content">
