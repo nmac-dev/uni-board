@@ -1,0 +1,42 @@
+/* Body */
+.text-colour-light {
+  color:            #e7e7e7;
+}
+.site-colour-1 {
+    background-color: #000000;
+}
+
+.site-colour-2{
+  background-color:#1a1a1a;
+}
+
+.site-colour-3{
+    background-color: #313131;
+}
+
+.site-colour-4{
+    background-color: #6d3235;
+}
+
+/* Site Visuals */
+/*
+@font-face {
+    font-family: 'OCR-B';
+    src: url('./Resources/OCR-B_Regular.ttf');
+}
+@keyframes BackgroundLoop {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+
+  #animate-backlground {
+  background-size: 236%;
+  background-image: url("./Resources/Tonebox_Small.jpg");
+  background-position: 0px 0px;
+  background-repeat: repeat-x;
+  animation: BackgroundLoop 60s linear infinite alternate;
+}
+}*/

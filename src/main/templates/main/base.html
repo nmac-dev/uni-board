@@ -1,0 +1,56 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<!--Head-->
+<head>
+    <!--Title & Logo-->
+    <title>Uni-Board</title>
+    <!--Meta Tags-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
+    <!--CSS-->
+    <link href="{% static 'main/css/main.css' %}" rel="stylesheet">
+    <!--Bootstrap_v5 CSS-->
+    <link href="{% static 'main/bootstrap_v5/css/bootstrap.css' %}" rel="stylesheet">
+    
+</head>
+<!--Body-->
+<body class="text-colour-light site-colour-1">
+    <!--Header-->
+    <div id="base_header" class="container-fluid top z-index-master site-colour-2" style="min-height: 10%; max-height: 10%;">
+        <div class="row" >
+            <div class="col p-2">
+                <button class="float-start">Menu</button>
+            </div>
+            <div class="col p-2 text-center">
+                <button>Logo</button>
+            </div>
+            <div class="col p-2">
+                <button class="float-end">Account</button>
+            </div>
+        </div>
+    </div>
+    <!--Nav-->
+    <nav id="base_nav" class="fixed-start z-index-n1 site-colour-3" >
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a href="/">            Home</a></li>
+                <li><a href="/messageboard">Message Board</a></li>
+                <li><a href="/quiz">        Quiz</a></li>
+                <li><a href="/leaderboard"> Leaderboard</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--Main_Content-->
+    <div id="main_content" class="container-fluid min-vh-100 z-index-0 site-colour-4" name="main_content">
+        <!--MAIN_START-->
+        {% block main_content %}
+        {% endblock %}
+        <!--MAIN_END-->
+    </div>
+    <!--Scripts-->
+    <!--Bootstrap_v5 JS-->
+    <script src="{% static 'main/bootstrap_v5/js/bootstrap.bundle.js' %}"/>
+
+</body>
+</html>
