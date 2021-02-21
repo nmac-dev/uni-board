@@ -15,24 +15,34 @@
     
 </head>
 <!--Body-->
-<body class="white-text site-colour-1">
+<body class="text-colour-light site-colour-1">
     <!--Header-->
-    <div id="base_header" class="container-fluid site-colour-2">
-        <img>Logo For Uni Board</img>
+    <div id="base_header" class="container-fluid top z-index-master site-colour-2" style="min-height: 10%; max-height: 10%;">
+        <div class="row" >
+            <div class="col p-2">
+                <button class="float-start">Menu</button>
+            </div>
+            <div class="col p-2 text-center">
+                <button>Logo</button>
+            </div>
+            <div class="col p-2">
+                <button class="float-end">Account</button>
+            </div>
+        </div>
     </div>
     <!--Nav-->
-    <div id="base_nav" class="nav nav-default site-colour-3">
+    <nav id="base_nav" class="nav nav-default z-index-n1 site-colour-3" >
         <div class="container">
             <ul class="nav navbar-nav">
-            <li><a href="/">            Home</a></li>
-            <li><a href="/messageboard">Message Board</a></li>
-            <li><a href="/quiz">        Quiz</a></li>
-            <li><a href="/leaderboard"> Leaderboard</a></li>
+                <li><a href="/">            Home</a></li>
+                <li><a href="/messageboard">Message Board</a></li>
+                <li><a href="/quiz">        Quiz</a></li>
+                <li><a href="/leaderboard"> Leaderboard</a></li>
             </ul>
-            </div>
-    </div>
+        </div>
+    </nav>
     <!--Main_Content-->
-    <div id="main_content" class="container-fluid site-colour-4" name="main_content">
+    <div id="main_content" class="container-fluid min-vh-100 z-index-0 site-colour-4" name="main_content">
         <!--MAIN_START-->
         {% block main_content %}
         {% endblock %}
