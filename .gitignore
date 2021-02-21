@@ -1,0 +1,4 @@
+## Ignore any/all files referenced during a commit
+
+# Python Cache Files
+*.pyc
