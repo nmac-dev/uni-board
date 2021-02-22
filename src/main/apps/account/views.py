@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
-from .forms import UserRegisterForm
+from .forms import UserRegisterForm, EditProfileForm
 
 def register(request):
     if request.method == 'POST':
@@ -21,3 +21,13 @@ def profile(request):
 
 def account(response):
     return render(response, "account/account.html", {})
+
+def edit_profile(request):
+    if request.method =='POST':
+        form = EditProfileForm(request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/account/profile')
+    else:
+        form = EditProfileForm(instance = request.user)
+        return render(request, 'account/edit_profile.html', {'form': form})
