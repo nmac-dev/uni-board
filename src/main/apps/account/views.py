@@ -9,14 +9,13 @@ def register(request):
             form.save()
             username = form.cleaned_data.get('username')
             messages.success(request, f'Account created! Please log in!')
-            return redirect('account/login')
+            return redirect('/account/login')
     else:
         form = UserRegisterForm()
     return render(request, 'account/register.html', {'form': form})
 
 def profile(request):
     return render(request, 'account/profile.html')
-
 
 # Create your views here.
 
