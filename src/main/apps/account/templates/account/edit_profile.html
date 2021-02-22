@@ -1,0 +1,13 @@
+{% extends "account/account.html"%}
+{% block content %}
+    <h1>{{ user.username }}, Edit you profile here.</h1>
+
+    <div class="container">
+
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+{% endblock content %}
