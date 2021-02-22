@@ -1,13 +1,19 @@
 {% extends "main/base.html" %}
 {% block main_content %}
-<div class="row ">
+<div class="row">
     <h1> Account Page </h1>
 </div>
 <div class="row">
     <div class="col">
-        <div class="alert alert-primary"> 
-            Div 1
-        </div>
+        <a href="/account/login">   Login    </a>
+        <a href="/account/logout/">  Logout   </a>
+        <a href="/account/profile/"> Profile  </a>
+        <a href="/account/register/">Register </a>
+</div>
+<div class="row">
+    <div class="col">
+        {%block content%}
+        {% endblock content %}
     </div>
 </div>
 {% endblock %}
