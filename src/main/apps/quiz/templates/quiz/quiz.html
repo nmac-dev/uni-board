@@ -1,6 +1,21 @@
-{% extends "main/quiz.html" %}
-{% block quiz_content %}
-<div class="quiz-container">
-    <label class="btn btn-lg"> <input type="radio" name="answer" value="VALUE">VALUELABEL</label>
+{% extends "main/base.html" %}
+{% block main_content %}
+<div class="row ">
+    <h1> Quiz Page </h1>
 </div>
+{% for %}
+<div class="row">
+    {% for %}
+    <div class="col">
+        <div class="alert alert-primary">
+            <div class="quiz-container">
+                {% for %}
+                <label class="btn btn-lg"> <input type="radio" name="answer" value="{{}}">{{}}</label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endfor %}
 {% endblock %}
