@@ -1,10 +1,18 @@
 {% extends "main/base.html" %}
+
+{% block extra_head_content%}
+{% load static %}
+<link href="{% static 'account/css/account.css' %}" rel="stylesheet">
+{% endblock %}
 {% block main_content %}
+
 <div class="row">
     <h1> Account Page </h1>
 </div>
+
 <div class="row">
     <div class="col">
+        {% block login_options %}
         {% if user.is_authenticated %}
             <a class="nav-item nav-link" href="{% url 'profile' %}">Profile</a>
             <a class="nav-item nav-link" href="{% url 'logout' %}">Log Out</a>
@@ -12,8 +20,10 @@
             <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
             <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
         {% endif %}
+        {% endblock %}
     </div>
 </div>
+<div id="MK" class="alert alert-primary">Funky Monkey</div>
 <div class="row">
     <div class="col">
         {%block content%}
