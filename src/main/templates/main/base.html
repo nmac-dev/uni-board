@@ -10,40 +10,72 @@
     <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
     <!--CSS-->
     <link href="{% static 'main/css/main.css' %}" rel="stylesheet">
+    <link href="{% static 'main/icons/icons.html' %}" rel="stylesheet">
     <!--Bootstrap_v5 CSS-->
     <link href="{% static 'main/bootstrap_v5/css/bootstrap.css' %}" rel="stylesheet">
     
+    
+    
 </head>
 <!--Body-->
-<body class="text-colour-light site-colour-1">
+<body class="text-colour-light site-colour-4">
+    
+    
     <!--Header-->
-    <div id="base_header" class="container-fluid top z-index-master site-colour-2" style="min-height: 10%; max-height: 10%;">
-        <div class="row" >
-            <div class="col p-2">
-                <button class="float-start">Menu</button>
+    <div class="row">
+        <div class="col">
+            <div id="Sidebar" class="sidebar">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" style="padding: 1rem;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-grid-fill" viewBox="0 0 16 16">
+                        <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zm8 0A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm-8 8A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm8 0A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3z"/>
+                </svg>
+                </a>
+                <a href="/">Home</a>
+                <a href="/account">Account</a>
+                <a href="/leaderboard">Leaderboards</a>
+                <a href="/message_board" overflow-wrap="normal">Message Board</a>
             </div>
-            <div class="col p-2 text-center">
-                <button>Logo</button>
+            <span style="font-size:30px;cursor:pointer;padding: 1rem; padding-bottom: 10px;" onclick="openNav()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="#001B2E" class="bi bi-grid" viewBox="0 0 16 16">
+                    <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                </svg>
+            </span>
+        
+            <script>
+            function openNav() {
+                document.getElementById("Sidebar").style.width = "200px";
+            }
+        
+            function closeNav() {
+                document.getElementById("Sidebar").style.width = "0";
+            }
+            </script>
+        </div>
+        <div class="col text-center">
+            <div id="Logo">
+                <a href="/"><img src="{%static 'main/images/Logo_Plain.png' %}" style="width: 75px; padding: 1rem;" alt="UB"/></a>
             </div>
-            <div class="col p-2">
-                <button class="float-end">Account</button>
+        </div>
+        <div class="col text-end">
+            <div id="LoginButton" style="padding: 1rem;">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
+                        <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
+                        <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
+                    </svg>
+                    Login
+                </button>
             </div>
         </div>
     </div>
-    <!--Nav-->
-    <nav id="base_nav" class="fixed-start z-index-n1 site-colour-3" >
-        <div class="container">
-            <ul class="nav navbar-nav">
-                <li><a href="/">                Home</a></li>
-                <li><a href="/account">         Account</a></li>
-                <li><a href="/leaderboard">     Leaderboard</a></li>
-                <li><a href="/message_board">   Message Board</a></li>
-                <li><a href="/quiz">            Quiz</a></li>
-            </ul>
-        </div>
-    </nav>
+    <p style="padding: 1px;"></p>
+        
+
+        
+        
+    
     <!--Main_Content-->
-    <div id="main_content" class="container-fluid min-vh-100 z-index-0 site-colour-4" name="main_content">
+    <div id="main_content" class="container-fluid min-vh-100 z-index-0" name="main_content">
         <!--MAIN_START-->
         {% block main_content %}
         {% endblock %}
@@ -52,6 +84,7 @@
     <!--Scripts-->
     <!--Bootstrap_v5 JS-->
     <script src="{% static 'main/bootstrap_v5/js/bootstrap.bundle.js' %}"/>
+
 
 </body>
 </html>
