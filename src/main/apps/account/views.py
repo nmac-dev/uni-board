@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import UserRegisterForm, EditProfileForm
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import PasswordChangeForm
 
 def register(request):
     if request.method == 'POST':
@@ -29,5 +31,23 @@ def edit_profile(request):
             form.save()
             return redirect('/account/profile')
     else:
-        form = EditProfileForm(instance = request.user)
-        return render(request, 'account/edit_profile.html', {'form': form})
+        if not request.user.is_anonymous:
+            form = EditProfileForm(instance = request.user)
+            return render(request, 'account/edit_profile.html', {'form': form})
+        else:
+            return redirect('/account/login')
+
+
+
+def change_password(request):
+    if request.method =='POST':
+        form = PasswordChangeForm(data =request.POST, user=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('/account/profile')
+    else:
+        if not request.user.is_anonymous:
+            form = PasswordChangeForm(user = request.user)
+            return render(request, 'account/change_password.html', {'form': form})
+        else:
+            return redirect('/account/login')

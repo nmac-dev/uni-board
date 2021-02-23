@@ -9,8 +9,7 @@ class UserRegisterForm(UserCreationForm):
         model = User   #register going to save to User model
         fields = ['username','email','password1','password2']
 
-class EditProfileForm(UserChangeForm):
-
+class EditProfileForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ['username', 'email']
