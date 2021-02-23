@@ -9,11 +9,11 @@ if len(sys.argv) != 3:
     exit()
 file , num_users= sys.argv[2], int(sys.argv[1])
 
-def create_user(first, last):
+def create_user(first, last, pk):
     user = [
         '{\n',
         '    \"model\": \"auth.user\",\n',
-        '    \"pk\": 1,\n',
+        '    \"pk\": ' + str(pk) + ',\n',
         '    \"fields\": {\n',
         '        \"password\": \"pbkdf2_sha256$216000$zWN0FuzR361j$FhccKCZlcquGXBi7kqC+BuQGnL1DSmMaOCjl6fWOdL0=\",\n',
         '        \"last_login\": \"2021-02-23T15:41:42.878Z\",\n',
@@ -34,8 +34,10 @@ def create_user(first, last):
 
 with open(file, 'w') as f:
     f.write('[\n')
+    key = 1
     for i in range(num_users):
-        lines = create_user(names.get_first_name(), names.get_last_name())
+        lines = create_user(names.get_first_name(), names.get_last_name(), key)
+        key += 1
         for line in lines:
             f.write(line)
     f.seek(f.tell() - 2, os.SEEK_SET)
