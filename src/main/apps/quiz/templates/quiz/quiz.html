@@ -3,29 +3,19 @@
 <div class="row ">
     <h1> Quiz Page </h1>
 </div>
-<div class="row"> <!-- quizzes: list of quizzes that have been posted
-                       quiz_item: dictionaries that populate quizzes, of the format:
-                                  quiz_item_X = {
-                                                 "question_title": "QUESTION", 
-                                                 "quiz_options": ["Option 1", "Option 2",...]
-                                                }      -->
-    {% for quiz_item in quizzes %}
+{% for %}
+<div class="row">
+    {% for %}
     <div class="col">
         <div class="alert alert-primary">
             <div class="quiz-container">
-                <h1>{{quiz_item.question_title}}</h1>
-                {% for quiz_option_label in quiz_item.quiz_options %}
-                    <label class="btn btn-lg"> <input type="radio" name="answer" value="{{quiz_option_label}}">{{quiz_option_label}}</label>
+                {% for %}
+                <label class="btn btn-lg"> <input type="radio" name="answer" value="{{}}">{{}}</label>
                 {% endfor %}
             </div>
         </div>
     </div>
-    {% empty %}
-    <div class="col">
-        <div class="alert alert-primary">
-            <h2>Sorry, no quizzes are available right now!</h2>
-        </div>
-    </div>
     {% endfor %}
 </div>
+{% endfor %}
 {% endblock %}
