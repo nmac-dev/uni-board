@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'main.apps.leaderboard',
     'main.apps.message_board',
     'main.apps.quiz',
+    'bootstrap',
+    'fontawesome',
 ]
 
 MIDDLEWARE = [

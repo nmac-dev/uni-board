@@ -1,16 +1,22 @@
 {% extends "main/base.html" %}
 {% block main_content %}
-<div class="row ">
-    <h1> Home Page </h1>
-<div class="row">
-    <div class="col-6">
-        <div class="alert alert-primary"> 
-            Div 1
+<div class="container">
+    <div class="row">
+        <h1 style="padding: 10px;"> Home Page </h1>
+    </div>
+</div>
+<div class="container">
+    <div class="row ">
+        <div class="col-4">
+            <div class="alert alert-primary"> 
+                Div 1
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="alert alert-primary"> 
+                Div 2
+            </div>
         </div>
     </div>
-    <div class="col-6">
-        <div class="alert alert-primary"> 
-            Div 2
-        </div>
-    </div>
+</div>
 {% endblock %}
