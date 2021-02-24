@@ -1,7 +1,10 @@
 from django.urls import path
-
-from . import views
+from .views import (
+    Message_Board,
+    User_Post_Detail
+)
 
 urlpatterns = [
-    path("", views.message_board, name="message_board"),
+    path("",                Message_Board.as_view(),    name="message_board"),
+    path('<int:pk>/',       User_Post_Detail.as_view(), name='user_post'    ),
 ]
