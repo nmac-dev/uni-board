@@ -47,6 +47,6 @@ Create a super user that can be access in the "/admin" page
 Creates a new "app" (kinda like a module) in the src directory  
 `startapp < appname >`  
 
-Load an admin user with username and password "admin"  
-`loaddata test_user.json`  
+Load an admin user with username and password "admin", and loads in example posts  
+`loaddata test_data.json`  
 
