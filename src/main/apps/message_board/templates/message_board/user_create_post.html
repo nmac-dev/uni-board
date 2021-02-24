@@ -1,0 +1,17 @@
+{% extends "main/base.html" %}
+{% block main_content %}
+<div class="row ">
+    <h1> Message Board | Create Post </h1>
+</div>
+<div class="row">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="row">
+            {{ form }}
+        </fieldset>
+        <div class="row">
+            <button class="" type="submit">Create Post</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
