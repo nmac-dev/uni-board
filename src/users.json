@@ -1,0 +1,74 @@
+[
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$zWN0FuzR361j$FhccKCZlcquGXBi7kqC+BuQGnL1DSmMaOCjl6fWOdL0=",
+        "last_login": "2021-02-23T15:41:42.878Z",
+        "is_superuser": true,
+        "username": "will",
+        "first_name": "",
+        "last_name": "",
+        "email": "will.tindall@live.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-02-23T15:41:36.340Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$r6pdACSOmvVP$OURGYOaM4gQpwssH8E6OOkiWKIZT+APwaXbzdoSdJWE=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "username1",
+        "first_name": "Bob",
+        "last_name": "Smith",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-02-23T15:42:23.115Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$PetISPHW5qbP$HHG/6AHX+USEs6qhXnoQF8qkcewMXrtn9r0ssaKM3DI=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "username2",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-02-23T15:42:37.297Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$2S6QDhnnHIm5$Fj0vg5guJFumvi7a/CBw37kz0dOOt73Nl6fB++0gJm4=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "username3",
+        "first_name": "User",
+        "last_name": "Number three",
+        "email": "email3@mail.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2021-02-23T15:42:54Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
