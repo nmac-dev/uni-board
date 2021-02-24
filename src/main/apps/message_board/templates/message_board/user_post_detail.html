@@ -1,27 +1,17 @@
 {% extends "main/base.html" %}
 {% block main_content %}
 <div class="row ">
-    <h1> Message Board </h1>
+    <h1> Message Board | Post Details </h1>
 </div>
-<!--Create Posts-->
 <div class="row">
-    <a class="col" href="{% url 'user_create_post' %}">Create Post  </a>
-    <a class="col" href="{% url 'my_posts' %}">My Posts             </a>
-</div>
-<!--Load Posts-->
-<!--HREF_TO_ADD: 
-    href=" user_post.op_user "
--->
-{% for user_post in user_posts %}
-    <div class="row">
         <div class="col alert alert-primary">
             <div class="row">
                 <a class="col">User: {{ user_post.op_user }}</a>
-                <a class="col">|ProfilePicHere|             </p>
+                <a class="col">|ProfilePicHere|</p>
             </div>
             <div class="row">
                 <div class="row">
-                    <a class="" href="{% url 'user_post' user_post.post_id %}">Subject: {{ user_post.subject }}</a>
+                    <p class="">Subject: {{ user_post.subject }}</p>
                 </div>
                 <div class="row">
                     <p class="">{{ user_post.content }}</p>
@@ -32,5 +22,4 @@
             </div>
         </div>
     </div>
-    {% endfor %}
 {% endblock %}

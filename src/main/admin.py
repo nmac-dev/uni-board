@@ -1,3 +1,5 @@
-from django.contrib import admin
+from django.contrib                 import admin
+from main.apps.message_board.models import User_Post
 
-# Register your models here.
+# Models
+admin.site.register(User_Post)
