@@ -5,17 +5,18 @@
 <head>
     <!--Title & Logo-->
     <title>Uni-Board</title>
+    <link rel="icon" href="{%static 'main/images/LogoV2_Plain.png' %}" type="image/gif">
     <!--Meta Tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, intial-scale=1, shrink-to-fit=no">
     <!--CSS-->
     <link href="{% static 'main/css/main.css' %}" rel="stylesheet">
+    
     <link href="{% static 'main/icons/icons.html' %}" rel="stylesheet">
     <!--Bootstrap_v5 CSS-->
     <link href="{% static 'main/bootstrap_v5/css/bootstrap.css' %}" rel="stylesheet">
-    
-    
-    
+    {% block extra_head_content %} 
+    {% endblock %}
 </head>
 <!--Body-->
 <body class="text-colour-light site-colour-4">
@@ -40,19 +41,13 @@
                 </svg>
             </span>
         
-            <script>
-            function openNav() {
-                document.getElementById("Sidebar").style.width = "200px";
-            }
-        
-            function closeNav() {
-                document.getElementById("Sidebar").style.width = "0";
-            }
-            </script>
+            <!--Javascript-->
+            <script  src="{% static 'main/js/main.js' %}"/></script>
+
         </div>
         <div class="col text-center">
             <div id="Logo">
-                <a href="/"><img src="{%static 'main/images/Logo_Plain.png' %}" style="width: 75px; padding: 1rem;" alt="UB"/></a>
+                <a href="/"><img src="{%static 'main/images/LogoV2_Plain.png' %}" style="width: 60px; padding: 1rem;" alt="UB"/></a>
             </div>
         </div>
         <div class="col text-end">
@@ -65,26 +60,20 @@
                 </span>
             </div>
         </div>
-        <p style="padding: 1px;"></p>
+        
     </div>
 
-    
-        
-
-        
-        
-    
     <!--Main_Content-->
     <div id="main_content" class="container-fluid min-vh-100" name="main_content">
+        <div class="container">
         <!--MAIN_START-->
         {% block main_content %}
         {% endblock %}
         <!--MAIN_END-->
+        </div>
     </div>
     <!--Scripts-->
     <!--Bootstrap_v5 JS-->
     <script src="{% static 'main/bootstrap_v5/js/bootstrap.bundle.js' %}"/>
-
-
 </body>
 </html>

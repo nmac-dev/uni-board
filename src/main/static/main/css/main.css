@@ -1,6 +1,6 @@
 /* Body */
 .text-colour-light {
-  color:            #e7e7e7;
+  color:            #FFEDDF;
 }
 .site-colour-1 {
     background-color: #D9FCF3;
@@ -15,11 +15,15 @@
 }
 
 .site-colour-4{
-  background-image: linear-gradient(#A1F7E1, #08887A);
+  background-image: linear-gradient(#08887A, #A1F7E1);
 }
 
-body {
+.body {
   font-family: "Lato", sans-serif;
+}
+
+.page-title {
+  text-align: center;
 }
 
 .sidebar {
@@ -59,6 +63,8 @@ body {
 #LoginButton {
   padding: 1rem;
 }
+
+
 /* Site Visuals */
 /*
 @font-face {
