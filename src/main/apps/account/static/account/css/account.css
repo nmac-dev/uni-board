@@ -1,5 +1,21 @@
-#MK {
-    position: absolute;
-    width: 20%;
-    color: red;
+.link a:link {
+    color: #0D1321;
+    text-decoration: none;
+    padding: 2px 7px 2px 7px;
+    border: 1px solid ;
+    border-radius: 5px;
+
+    margin: 1em;
+}
+
+.link a:hover {
+    color: #FFEDDF;
+    border: 1px solid #0D1321;
+    background-color: #0D1321;
+}
+
+.text {
+    color:#0D1321;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
 }
