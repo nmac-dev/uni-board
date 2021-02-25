@@ -1,0 +1,53 @@
+[
+{
+    "model": "message_board.user_post",
+    "pk": 1,
+    "fields": {
+        "op_user": 2,
+        "subject": "This is my first post!",
+        "content": "Hey Matt! This is just a test post.",
+        "date_time": "2021-02-24T18:10:20.347Z",
+        "last_update": "2021-02-24T18:10:20.354Z"
+    }
+},
+{
+    "model": "message_board.user_post",
+    "pk": 2,
+    "fields": {
+        "op_user": 2,
+        "subject": "Another Post",
+        "content": "This is another test post.",
+        "date_time": "2021-02-24T18:10:51.287Z",
+        "last_update": "2021-02-24T18:10:51.292Z"
+    }
+},
+{
+    "model": "message_board.user_post",
+    "pk": 3,
+    "fields": {
+        "op_user": 2,
+        "subject": "Another test post",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing elit pellentesque habitant morbi tristique senectus et netus. Lorem dolor sed viverra ipsum nunc aliquet bibendum. Adipiscing tristique risus nec feugiat in fermentum posuere urna nec. Massa sed elementum tempus egestas sed sed risus pretium quam. In hac habitasse platea dictumst quisque sagittis purus. Sollicitudin aliquam ultrices sagittis orci a scelerisque purus. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada. Auctor urna nunc id cursus metus aliquam eleifend mi in. Est sit amet facilisis magna etiam tempor orci eu. Quam adipiscing vitae proin sagittis nisl rhoncus mattis rhoncus urna. Euismod nisi porta lorem mollis. Eu lobortis elementum nibh tellus molestie nunc non. Eu facilisis sed odio morbi quis commodo. Mi quis hendrerit dolor magna eget. Sem et tortor consequat id porta nibh venenatis cras.",
+        "date_time": "2021-02-24T18:11:45.819Z",
+        "last_update": "2021-02-24T18:11:45.827Z"
+    }
+},
+{
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$216000$VRVs51gguI1o$iNffOvwrvgrKQLfJwaYtMpGo/x6e21UZ1363cTQIZV8=",
+        "last_login": null,
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "admin_test@mail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2021-02-24T17:35:40.507Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
