@@ -1,4 +1,5 @@
 from django.shortcuts           import render
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.urls                import reverse
 from .models                    import User_Post
 from django.views.generic import (
@@ -10,7 +11,7 @@ from django.views.generic import (
 )
 #   Views
 
-class Create_Post(CreateView):
+class Create_Post(LoginRequiredMixin, CreateView):
     model           = User_Post
     fields          = ['subject', 'content']
     template_name   = "message_board/user_create_post.html"
@@ -35,7 +36,7 @@ class User_Post_Detail(DetailView):
     model = User_Post
 
 
-class My_Posts(ListView):
+class My_Posts(LoginRequiredMixin, ListView):
     model               = User_Post
     ordering            = ['-date_time']                   # Orders to most recent date
     context_object_name = 'user_posts'
