@@ -12,6 +12,7 @@ A messaging board for students and academics
 
 ## Features
  - Home Page (default)
+ - Account/Profile System
  - Message Board
  - Quiz Completion/Creation
  - LeaderBoards
