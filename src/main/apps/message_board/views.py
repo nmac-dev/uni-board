@@ -13,12 +13,12 @@ from django.views.generic import (
 
 class Create_Post(LoginRequiredMixin, CreateView):
     model           = User_Post
-    fields          = ['subject', 'content']
+    fields          = ['post_subject', 'post_content']
     template_name   = "message_board/user_create_post.html"
     post_id = None
 
     def form_valid(self, form):
-        form.instance.op_user = self.request.user
+        form.instance.post_user = self.request.user
         post            =   form.save()
         self.post_id    =   post.post_id
         return super().form_valid(form)
@@ -28,7 +28,7 @@ class Create_Post(LoginRequiredMixin, CreateView):
 
 class Message_Board(ListView):
     model               = User_Post
-    ordering            = ['-date_time']                   # Orders to most recent date
+    ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/message_board.html'
 
@@ -38,6 +38,6 @@ class User_Post_Detail(DetailView):
 
 class My_Posts(LoginRequiredMixin, ListView):
     model               = User_Post
-    ordering            = ['-date_time']                   # Orders to most recent date
+    ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/my_posts.html'

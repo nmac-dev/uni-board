@@ -1,16 +1,19 @@
 {% extends "main/base.html" %}
 {% block main_content %}
 <div class="row ">
-    <h1> Message Board | Create Post </h1>
+    <h1> 
+        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        | Create Post
+    </h1>
 </div>
 <div class="row">
     <form method="POST">
         {% csrf_token %}
-        <fieldset class="row">
+        <fieldset class="row rounded-3 bg-dark bg-gradient">
             {{ form }}
         </fieldset>
-        <div class="row">
-            <button class="" type="submit">Create Post</button>
+        <div class="row pt-3">
+            <button class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" type="submit">Create Post</button>
         </div>
     </form>
 </div>

@@ -1,25 +1,34 @@
 {% extends "main/base.html" %}
 {% block main_content %}
 <div class="row ">
-    <h1> Message Board | Post Details </h1>
+    <h1>
+        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        | Post Details
+    </h1>
 </div>
-<div class="row">
-        <div class="col alert alert-primary">
+<div class="row pt-3 pb-3">
+    <div class="col rounded-3 bg-dark bg-gradient">
+        <div class="row pt-3 pb-3 bg-secondary">
+            <a class="col rounded text-warning text-start">  User: {{ user_post.post_user }} </a>
+            <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
+        </div>
+        <div class="row pt-3">
             <div class="row">
-                <a class="col">User: {{ user_post.op_user }}</a>
-                <a class="col">|ProfilePicHere|</p>
+                <a class="text-warning">Subject: {{ user_post.post_subject }}</a>
             </div>
-            <div class="row">
-                <div class="row">
-                    <p class="">Subject: {{ user_post.subject }}</p>
-                </div>
-                <div class="row">
-                    <p class="">{{ user_post.content }}</p>
-                </div>
-                <div class="row">
-                    <p class="">Created on: {{ user_post.date_time|date:"d F, Y" }}</p>
-                </div>
+            <div class="row pt-3">
+                <p class="text-start">{{ user_post.post_content }}</p>
             </div>
         </div>
+        <div class="row pt-3 text-info">
+            <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
+            <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
+        </div>
     </div>
+</div>
+{% if user_post.post_user == request.user %}
+    <div class="row">
+        <a class="col text-center p-3 bg-dark bg-gradient text-warning" href="{% url 'user_create_post' %}">Edit Post  </a>
+    </div>
+{% endif %}
 {% endblock %}
