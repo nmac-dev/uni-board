@@ -9,7 +9,17 @@ from django.views.generic import (
     UpdateView,
     DeleteView
 )
-#   Views
+
+# Main Message Board Page
+class Message_Board(ListView):
+    model               = User_Post
+    ordering            = ['-post_date']                   # Orders to most recent date
+    context_object_name = 'user_posts'
+    template_name       = 'message_board/message_board.html'
+
+class Post_Detail(DetailView):
+    model = User_Post
+    template_name   = "message_board/post_detail.html"
 
 class Create_Post(LoginRequiredMixin, CreateView):
     model           = User_Post
@@ -26,7 +36,6 @@ class Create_Post(LoginRequiredMixin, CreateView):
 
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.post_id})
-
 
 class Update_Post(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model           = User_Post
@@ -52,15 +61,20 @@ class Update_Post(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.post_id})
 
-class Message_Board(ListView):
-    model               = User_Post
-    ordering            = ['-post_date']                   # Orders to most recent date
-    context_object_name = 'user_posts'
-    template_name       = 'message_board/message_board.html'
-
-class Post_Detail(DetailView):
+class Delete_Post(DeleteView):
     model = User_Post
-    template_name   = "message_board/post_detail.html"
+    template_name   = "message_board/delete_post_confirm.html"
+
+    # Validate user owns post
+    def test_func(self):
+        isPostOwner = False
+        post_detail = self.get_object()
+        if self.request.user == post_detail.post_user:
+            isPostOwner = True
+        return isPostOwner
+
+    def get_success_url(self):
+        return reverse('my_posts')
 
 class My_Posts(LoginRequiredMixin, ListView):
     model               = User_Post

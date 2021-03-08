@@ -29,6 +29,8 @@
 {% if user_post.post_user == request.user %}
     <div class="row">
         <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+        <br class="col p-3"/>
+        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
     </div>
 {% endif %}
 {% endblock %}
