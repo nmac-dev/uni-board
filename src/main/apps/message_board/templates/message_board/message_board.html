@@ -29,9 +29,11 @@
                 </div>
             </div>
             <div class="row pt-3 text-info">
-                <p class="col test-middle"><form action="{% url 'like_post' user_post.pk %}" method="POST">
+                <p class="col test-middle"><form action="{% url 'like_post_mb' user_post.pk %}" method="POST">
                     {% csrf_token %}
-                    <button type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                    <div >
+                        <button class="btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                    </div>
                 </form></p>
                 <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
                 <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>

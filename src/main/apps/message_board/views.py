@@ -17,7 +17,8 @@ class Message_Board(ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/message_board.html'
-
+    
+    
 
 class Post_Detail(DetailView):
     model = User_Post
@@ -85,7 +86,38 @@ class My_Posts(LoginRequiredMixin, ListView):
     template_name       = 'message_board/my_posts.html'
 
 
-def like_View(request, pk):
+def like_post_mb(request, pk):
     post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
-    post.likes.add(request.user)
+
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
     return HttpResponseRedirect(reverse('message_board'))
+
+def like_post_mp(request, pk):
+    post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
+
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('my_posts'))
+
+def like_post_pd(request, pk):
+    post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
+
+    liked = False
+    if post.likes.filter(id=request.user.id).exists():
+        post.likes.remove(request.user)
+        liked = False
+    else:
+        post.likes.add(request.user)
+        liked = True
+    return HttpResponseRedirect(reverse('post_detail',kwargs={'pk': request.POST.get('post_id')}))
