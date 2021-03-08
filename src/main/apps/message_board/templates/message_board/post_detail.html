@@ -1,0 +1,36 @@
+{% extends "main/base.html" %}
+{% block main_content %}
+<div class="row">
+    <h1>
+        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        | Post Details
+    </h1>
+</div>
+<div class="row pt-3 pb-3">
+    <div class="col rounded-3 bg-dark bg-gradient">
+        <div class="row pt-3 pb-3 bg-secondary">
+            <a class="col rounded text-warning text-start">  User: {{ user_post.post_user }} </a>
+            <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
+        </div>
+        <div class="row pt-3">
+            <div class="row">
+                <a class="text-warning">Subject: {{ user_post.post_subject }}</a>
+            </div>
+            <div class="row pt-3">
+                <p class="text-start">{{ user_post.post_content }}</p>
+            </div>
+        </div>
+        <div class="row pt-3 text-info">
+            <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
+            <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
+        </div>
+    </div>
+</div>
+{% if user_post.post_user == request.user %}
+    <div class="row">
+        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+        <br class="col p-3"/>
+        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+    </div>
+{% endif %}
+{% endblock %}

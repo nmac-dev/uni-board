@@ -1,37 +1,35 @@
 {% extends "main/base.html" %}
 {% block main_content %}
 <div class="row ">
-    <h1> Message Board | My Posts </h1>
+    <h1>
+        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        | My Posts 
+    </h1>
 </div>
 <!--Create Posts-->
-<div class="row">
-    <a href="">Create Post</a>
-</div>
 <!--Load Posts-->
-<!--HREF_TO_ADD: 
-    href=" user_post.op_user "
--->
 {% for user_post in user_posts %}
-    {% if user_post.op_user == request.user %}
-    <div class="row">
-        <div class="col alert alert-primary">
-            <div class="row">
-                <a class="col" >User: {{ user_post.op_user }}</a>
-                <a class="col">|ProfilePicHere|</p>
-            </div>
-            <div class="row">
-                <div class="row">
-                    <a class="" href="{% url 'user_post' user_post.post_id %}">Subject: {{ user_post.subject }}</a>
+    {% if user_post.post_user == request.user %}
+        <div class="row pt-3 pb-3">
+            <div class="col rounded-3 bg-dark bg-gradient">
+                <div class="row pt-3 pb-3 bg-secondary">
+                    <a class="col rounded text-warning text-start">  User: {{ user_post.post_user }} </a>
+                    <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
                 </div>
-                <div class="row">
-                    <p class="">{{ user_post.content }}</p>
+                <div class="row pt-3">
+                    <div class="row">
+                        <a class="text-warning" href="{% url 'post_detail' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a>
+                    </div>
+                    <div class="row pt-3">
+                        <p class="text-start">{{ user_post.post_content }}</p>
+                    </div>
                 </div>
-                <div class="row">
-                    <p class="">Created on: {{ user_post.date_time|date:"d F, Y" }}</p>
+                <div class="row pt-3 text-info">
+                    <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
+                    <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
                 </div>
             </div>
         </div>
-    </div>
     {% endif %}
 {% endfor %}
 {% endblock %}
