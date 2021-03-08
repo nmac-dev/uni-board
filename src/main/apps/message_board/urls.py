@@ -6,6 +6,8 @@ from .views import (
     Update_Post,
     Delete_Post,
     My_Posts,
+    like_View
+
 )
 
 urlpatterns = [
@@ -15,4 +17,5 @@ urlpatterns = [
     path('<int:pk>/update/',    Update_Post.as_view(),      name='update_post'  ),
     path('<int:pk>/delete/',    Delete_Post.as_view(),      name='delete_post'  ),
     path('my_posts/',           My_Posts.as_view(),         name='my_posts'     ),
+    path('like/<int:pk>',       like_View,                   name='like_post'    ),
 ]
