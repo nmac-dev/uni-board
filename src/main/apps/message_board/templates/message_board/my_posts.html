@@ -18,7 +18,7 @@
                 </div>
                 <div class="row pt-3">
                     <div class="row">
-                        <a class="text-warning" href="{% url 'user_post' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a>
+                        <a class="text-warning" href="{% url 'post_detail' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a>
                     </div>
                     <div class="row pt-3">
                         <p class="text-start">{{ user_post.post_content }}</p>

@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block main_content %}
-<div class="row ">
+<div class="row">
     <h1>
         <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
         | Post Details
@@ -28,7 +28,7 @@
 </div>
 {% if user_post.post_user == request.user %}
     <div class="row">
-        <a class="col text-center p-3 bg-dark bg-gradient text-warning" href="{% url 'user_create_post' %}">Edit Post  </a>
+        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
     </div>
 {% endif %}
 {% endblock %}
