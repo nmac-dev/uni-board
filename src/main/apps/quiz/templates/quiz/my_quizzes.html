@@ -7,9 +7,9 @@
     </h1>
 </div>
 <!--Load Quizzes-->
-{% for user_post in user_posts %}
-    {% if user_post.post_user == request.user %}
-    
+{% for quiz_model in quiz_models %}
+    {% if quiz_model.creator == request.user %}
+        {% include "quiz/quiz_feed_template.html" %}
     {% endif %}
 {% endfor %}
 {% endblock %}
