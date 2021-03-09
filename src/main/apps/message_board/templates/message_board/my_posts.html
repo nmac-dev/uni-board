@@ -1,6 +1,6 @@
 {% extends "main/base.html" %}
 {% block main_content %}
-<div class="row ">
+<div class="row">
     <h1>
         <a class="fw-bold" style="text-decoration: none; color: black;" href="{% url 'message_board' %}">Message Board</a>
         | My Posts 
@@ -10,10 +10,20 @@
 <!--Load Posts-->
 {% for user_post in user_posts %}
     {% if user_post.post_user == request.user %}
-    <div class="row pt- pb-3">
+    <div class="container">
+        <div class="row">
+            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+            <br class="col"/>
+            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        </div>
+    </div>
+    {% endif %}
+    
+    {% if user_post.post_user == request.user %}
+    <div class="row pt-3 pb-3">
         <div class="col rounded-3 bg-dark">
             <div class="row pt-3 pb-3 rounded bg-secondary">
-                <img class="col-1 rounded text-warning text-light text-end" ></img>
+                <img class="col-1 rounded" ></img>
                 <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ user_post.post_user }} </a>
             </div>
             <div class="position-relative">
@@ -25,20 +35,20 @@
                         <p class="text-start">{{ user_post.post_content }}</p>
                     </div>
                 </div>
-                <div class="row pt-3 text-info">
+                <div class="row text-info">
 
                     <p class="col test-middle"><form action="{% url 'like_post_mp' user_post.pk %}" method="POST">
                         {% csrf_token %}
     
                         {% if user in user_post.likes.all %}
                         <div >
-                            <button class="btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                            <button class="btn btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>         {{ user_post.total_Likes }}
                         </div>
                         {% else %}
                         <div >
-                            <button class="btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                            <button class="btn btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>        {{ user_post.total_Likes }}
                         </div>
-                        {% endif %}
+                {% endif %}
                     </form></p>
                     <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
                     <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
@@ -46,14 +56,8 @@
             </div>
         </div>
     </div>
-    {% if user_post.post_user == request.user %}
-        <div class="row">
-            <a class="col-2 text-center p-3 rounded bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
-            <br class="col"/>
-            <a class="col-2 text-center p-3 rounded bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
-        </div>
-    {% endif %}
-    <br/>
+    
     {% endif %}
 {% endfor %}
+<br/>
 {% endblock %}

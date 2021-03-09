@@ -13,16 +13,16 @@
         {% block login_options %}
         {% if user.is_authenticated %}
         <div class="row">
-            <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'profile' %}">Profile</a>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'profile' %}">Profile</a>
             <br/>
-            <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'logout' %}">Log Out</a>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'logout' %}">Log Out</a>
         </div>
         </div>
         {% else %}
         <div class="row">
-            <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'login' %}" role="button">Login</a>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'login' %}" role="button">Login</a>
             <br/>
-            <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'register' %}" role="button">Register</a>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'register' %}" role="button">Register</a>
         </div class="row">
         {% endif %}
         {% endblock %}

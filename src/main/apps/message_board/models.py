@@ -23,7 +23,7 @@ class User_Post(models.Model):
     def __str__(self):
         return self.post_subject
 
-# class User_Post_Comments(models.Model):
+#
 #     # PK
 #     cmnt_id         = models.AutoField(     primary_key=True                )
 #     # FK
