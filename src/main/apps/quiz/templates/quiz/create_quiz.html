@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% block extra_head_content %} 
+    {% load static %}
+    <link href="{% static 'quiz/css/quiz.css' %}" rel="stylesheet">
+{% endblock %}
+{% block main_content %}
+<div class="row ">
+    <h1> 
+        <a class="text-warning" href="{% url 'quiz_home' %}">Quizzes</a>
+        | Create Quiz
+    </h1>
+</div>
+<!--Create Quizzes-->
+<div class="row">
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="row rounded-3 bg-dark bg-gradient">
+            {{ form }}
+        </fieldset>
+        <div class="row pt-3">
+            <button class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" type="submit">Create Quiz</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

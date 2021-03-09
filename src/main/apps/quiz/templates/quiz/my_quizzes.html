@@ -1,0 +1,15 @@
+{% extends "main/base.html" %}
+{% block main_content %}
+<div class="row ">
+    <h1>
+        <a class="text-warning" href="{% url 'quiz_home' %}">Quizzes</a>
+        | My Quizzes 
+    </h1>
+</div>
+<!--Load Quizzes-->
+{% for user_post in user_posts %}
+    {% if user_post.post_user == request.user %}
+    
+    {% endif %}
+{% endfor %}
+{% endblock %}

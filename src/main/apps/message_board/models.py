@@ -17,7 +17,7 @@ class User_Post(models.Model):
     post_updated    = models.DateTimeField( auto_now=True                   )
 
     def __str__(self):
-        return self.subject
+        return self.post_subject
 
 # class User_Post_Comments(models.Model):
 #     # PK
