@@ -2,7 +2,8 @@ from django.shortcuts           import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
 from .models                    import User_Post
-from django.http import HttpResponseRedirect
+from django.http                import HttpResponseRedirect
+from main.apps.leaderboard.models import Leaderboard
 from django.views.generic import (
     ListView,
     DetailView,
@@ -93,9 +94,11 @@ def like_post_mb(request, pk):
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
         liked = False
+        losePoint(post)
     else:
         post.likes.add(request.user)
         liked = True
+        addPoint(post)
     return HttpResponseRedirect(reverse('message_board'))
 
 def like_post_mp(request, pk):
@@ -105,9 +108,11 @@ def like_post_mp(request, pk):
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
         liked = False
+        losePoint(post)
     else:
         post.likes.add(request.user)
         liked = True
+        addPoint(post)
     return HttpResponseRedirect(reverse('my_posts'))
 
 def like_post_pd(request, pk):
@@ -117,7 +122,33 @@ def like_post_pd(request, pk):
     if post.likes.filter(id=request.user.id).exists():
         post.likes.remove(request.user)
         liked = False
+        losePoint(post)
     else:
         post.likes.add(request.user)
         liked = True
+        addPoint(post)
     return HttpResponseRedirect(reverse('post_detail',kwargs={'pk': request.POST.get('post_id')}))
+
+def addPoint(post):
+    leaderboard = Leaderboard()
+
+    obj, created = Leaderboard.objects.get_or_create(user=post.post_user)
+
+    if created == True:
+        obj.points = 1
+    else:
+        obj.points = obj.points + 1
+
+    obj.save()
+
+def losePoint(post):
+    leaderboard = Leaderboard()
+
+    obj, created = Leaderboard.objects.get_or_create(user=post.post_user)
+
+    if created == True:
+        obj.points = 0
+    else:
+        obj.points = obj.points - 1
+
+    obj.save()

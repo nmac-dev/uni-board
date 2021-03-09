@@ -1,23 +1,34 @@
 {% extends "main/base.html" %}
 {% block main_content %}
-<div class="row ">
-    <h1> Leaderboard Page </h1>
-</div>
 <div class="row">
-    <div class="col">
-        <div class="alert alert-primary"> 
-            Div 1
-        </div>
-    </div>
-    <div class="col">
-        <div class="alert alert-primary"> 
-            Div 2
-        </div>
-    </div>
-    <div class="col">
-        <div class="alert alert-primary"> 
-            Div 3
+    <h1 class="fw-bold" style="text-decoration: none; color: black;"> leaderboard </h1>
+</div>
+
+<!--Load Posts-->
+<!--HREF_TO_ADD: 
+    href=" user_post.op_user "
+-->
+
+<div class="row pt-3 pb-3 ">
+    <div class="col rounded-3 pb-3 bg-secondary">
+        <div class="row pt-4">
+            
+            <p class="col text-start" style="text-decoration: none; color:white; font-size:28px;" >  Username:</p>
+            <p class="col text-end" style="text-decoration: none; color:white; font-size:28px;">    points:</p>
         </div>
     </div>
 </div>
-{% endblock %}
+<div class="row pt-3 pb-3 ">
+    <div class="col rounded-3 pb-3 bg-dark">
+{% for entrie in leaderboard %}
+            {% if entrie.points > 0 %}
+            <div class="row pt-4">
+                <p class="col text-start" style="text-decoration: none; color:white; font-size:22px;" >  {{entrie.user}}</p>
+                <p class="col text-end" style="text-decoration: none; color:white; font-size:22px;">    {{entrie.points}}</p>
+            </div>
+            {% endif %}  
+    {% endfor %}
+{% endblock %} 
+
+</div>
+</div>
