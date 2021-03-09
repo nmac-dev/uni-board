@@ -15,11 +15,15 @@ class User_Post(models.Model):
     post_content    = models.TextField(     max_length=2549                 )
     post_date       = models.DateTimeField( default=timezone.now            )
     post_updated    = models.DateTimeField( auto_now=True                   )
+    likes           = models.ManyToManyField(User, related_name='post'      )
+
+    def total_Likes(self):
+        return self.likes.count()
 
     def __str__(self):
         return self.post_subject
 
-# class User_Post_Comments(models.Model):
+#
 #     # PK
 #     cmnt_id         = models.AutoField(     primary_key=True                )
 #     # FK

@@ -15,7 +15,8 @@
 }
 
 .site-colour-4{
-  background-image: linear-gradient(#08887A, #A1F7E1);
+  /*background-image: linear-gradient(#08887A, #A1F7E1);*/
+  background-image: linear-gradient(#05554C, #B9FAE8);
 }
 
 .body {

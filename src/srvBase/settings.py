@@ -130,3 +130,10 @@ STATIC_URL          = '/static/'
 LOGIN_URL           = '/account/login/'
 LOGIN_REDIRECT_URL  = '/account/profile'
 LOGOUT_REDIRECT_URL = LOGIN_URL
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'no.reply.uniboard@gmail.com'
+EMAIL_HOST_PASSWORD = 'udp8PtdyrBHxBuR'
