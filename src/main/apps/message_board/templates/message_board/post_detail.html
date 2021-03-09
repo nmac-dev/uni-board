@@ -32,10 +32,6 @@
                     <p class="text-start">{{ user_post.post_content }}</p>
                 </div>
             </div>
-            <div class="row pt-3 text-info">
-                <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
-                <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
-            </div>
         </div>
         <div class="row pt-3 text-info">
             <p class="col test-middle"><form action="{% url 'like_post_pd' user_post.pk %}" method="POST">
