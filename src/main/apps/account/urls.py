@@ -12,4 +12,15 @@ urlpatterns = [
     path('profile/',    user_views.profile,                                                      name='profile'  ),
     path('profile/edit/', user_views.edit_profile,                                               name='edit_profile'),
     path('change-password/', user_views.change_password,                                         name='change_password'),
+
+## password recovery views
+    path('reset_password/', auth_views.PasswordResetView.as_view(template_name='account/password_reset.html'),
+    name ='reset_password'),
+    path('reset_password_Sent/', auth_views.PasswordResetDoneView.as_view(template_name='account/reset_password_Sent.html'),                      
+    name='password_reset_done'),
+    path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(template_name='account/reset_password_confirm.html'),                
+    name ='password_reset_confirm'),
+    path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='account/reset_password_complete.html'),              
+    name ='password_reset_complete'),
 ]
+

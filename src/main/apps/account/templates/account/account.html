@@ -6,26 +6,29 @@
 {% block main_content %}
 
 <div class="row">
-    <h1 class="text page-title"> Account Page </h1>
+    <h1 class="fw-bold" style="text-decoration: none; color: black;"> Account Page </h1>
 </div>
 <div class="container-fluid">
-    <div class="row">
+    <div class="row pt-3">
         {% block login_options %}
         {% if user.is_authenticated %}
-        <div class="link page-title">
-            <a href="{% url 'profile' %}">Profile</a>
-            <a href="{% url 'logout' %}">Log Out</a>
+        <div class="row">
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'profile' %}">Profile</a>
+            <br/>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'logout' %}">Log Out</a>
+        </div>
         </div>
         {% else %}
-        <div class="link page-title">
-            <a href="{% url 'login' %}" role="button">Login</a>
-            <a href="{% url 'register' %}" role="button">Register</a>
-        </div>
+        <div class="row">
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'login' %}" role="button">Login</a>
+            <br/>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'register' %}" role="button">Register</a>
+        </div class="row">
         {% endif %}
         {% endblock %}
     </div>
 </div>
-<div class="row">
+<div class="row pt-3">
     <div class="col">
         {%block content%}
         {% endblock content %}

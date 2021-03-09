@@ -1,13 +1,16 @@
 {% extends "main/base.html" %}
+
 {% block main_content %}
-<div class="row ">
-    <h1> Message Board </h1>
+<div class="row">
+    <h1 class="fw-bold" style="text-decoration: none; color: black;"> Message Board </h1>
 </div>
 <!--Create Posts-->
-<div class="row">
-    <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'create_post' %}">Create Post  </a>
-    <br class="col p-3"/>
-    <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'my_posts' %}">My Posts             </a>
+<div class="container">
+    <div class="row">
+        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'create_post' %}">Create Post</a>
+        <br class="col"/>
+        <a class="col-2 btn btn-dark rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'my_posts' %}">My Posts</a>
+    </div>
 </div>
 <!--Load Posts-->
 <!--HREF_TO_ADD: 
@@ -15,24 +18,41 @@
 -->
 {% for user_post in user_posts %}
     <div class="row pt-3 pb-3 ">
-        <div class="col rounded-3 bg-dark bg-gradient">
-            <div class="row pt-3 pb-3 bg-secondary">
-                <a class="col rounded text-warning text-start">  User: {{ user_post.post_user }} </a>
-                <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
+        <div class="col rounded-3 bg-dark">
+            <div class="row rounded-1 pt-3 pb-3 bg-secondary">
+                <img class="col-1 rounded text-warning text-light text-end" ></img>
+                <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ user_post.post_user }} </a>
             </div>
-            <div class="row pt-3">
-                <div class="row">
-                    <a class="text-warning" href="{% url 'post_detail' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a>
-                </div>
+            <div class="position-relative">
                 <div class="row pt-3">
-                    <p class="text-start">{{ user_post.post_content }}</p>
+                    <div class="row">
+                        <Legend><a class="stretched-link" style="text-decoration: none; color:white;" href="{% url 'post_detail' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a></Legend>
+                    </div>
+                    <div class="row pt-3">
+                        <p class="text-start">{{ user_post.post_content }}</p>
+                    </div>
                 </div>
             </div>
-            <div class="row pt-3 text-info">
+            <div class="row text-info">
+                <p class="col test-middle"><form action="{% url 'like_post_mb' user_post.pk %}" method="POST">
+                    {% csrf_token %}
+                    
+                    {% if user in user_post.likes.all %}
+                    <div >
+                        <button class="btn btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>         {{ user_post.total_Likes }}
+                    </div>
+                    {% else %}
+                    <div >
+                        <button class="btn btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>        {{ user_post.total_Likes }}
+                    </div>
+                    {% endif %}
+
+                </form></p>
                 <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
                 <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
             </div>
         </div>
     </div>
     {% endfor %}
-{% endblock %}
+{% endblock %} 
+
