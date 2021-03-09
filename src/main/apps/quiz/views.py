@@ -24,23 +24,23 @@ class Quiz_Detail(DetailView):
 
 class Create_Quiz(LoginRequiredMixin, CreateView):
     model         = Quiz_Model
-    fields      =   [   'title', 
-                        'desc',
-                        # Each Row is a question set
-                        'Question_1', 'Question_1_Option_1', 'Question_1_Option_2','Question_1_Option_3','Question_1_Option_4', 'Question_1_Correct_Answer',
-                        'Question_2', 'Question_2_Option_1', 'Question_2_Option_2','Question_2_Option_3','Question_2_Option_4', 'Question_2_Correct_Answer',
-                        'Question_3', 'Question_3_Option_1', 'Question_3_Option_2','Question_3_Option_3','Question_3_Option_4', 'Question_3_Correct_Answer',
-                        'Question_4', 'Question_4_Option_1', 'Question_4_Option_2','Question_4_Option_3','Question_4_Option_4', 'Question_4_Correct_Answer',
-                        'Question_5', 'Question_5_Option_1', 'Question_5_Option_2','Question_5_Option_3','Question_5_Option_4', 'Question_5_Correct_Answer',
-                        'Question_6', 'Question_6_Option_1', 'Question_6_Option_2','Question_6_Option_3','Question_6_Option_4', 'Question_6_Correct_Answer',
-                        'Question_7', 'Question_7_Option_1', 'Question_7_Option_2','Question_7_Option_3','Question_7_Option_4', 'Question_7_Correct_Answer',
-                        'Question_8', 'Question_8_Option_1', 'Question_8_Option_2','Question_8_Option_3','Question_8_Option_4', 'Question_8_Correct_Answer',
-                        'Question_9', 'Question_9_Option_1', 'Question_9_Option_2','Question_9_Option_3','Question_9_Option_4', 'Question_9_Correct_Answer',
-                        'Question_10', 'Question_10_Option_1', 'Question_10_Option_2', 'Question_10_Option_3', 'Question_10_Option_4', 'Question_10_Correct_Answer',
-                    ]
+    # fields      =   [   'title', 
+    #                     'desc',
+    #                     # Each Row is a question set
+    #                     'Question_1', 'Question_1_Option_1', 'Question_1_Option_2','Question_1_Option_3','Question_1_Option_4', 'Question_1_Correct_Answer',
+    #                     'Question_2', 'Question_2_Option_1', 'Question_2_Option_2','Question_2_Option_3','Question_2_Option_4', 'Question_2_Correct_Answer',
+    #                     'Question_3', 'Question_3_Option_1', 'Question_3_Option_2','Question_3_Option_3','Question_3_Option_4', 'Question_3_Correct_Answer',
+    #                     'Question_4', 'Question_4_Option_1', 'Question_4_Option_2','Question_4_Option_3','Question_4_Option_4', 'Question_4_Correct_Answer',
+    #                     'Question_5', 'Question_5_Option_1', 'Question_5_Option_2','Question_5_Option_3','Question_5_Option_4', 'Question_5_Correct_Answer',
+    #                     'Question_6', 'Question_6_Option_1', 'Question_6_Option_2','Question_6_Option_3','Question_6_Option_4', 'Question_6_Correct_Answer',
+    #                     'Question_7', 'Question_7_Option_1', 'Question_7_Option_2','Question_7_Option_3','Question_7_Option_4', 'Question_7_Correct_Answer',
+    #                     'Question_8', 'Question_8_Option_1', 'Question_8_Option_2','Question_8_Option_3','Question_8_Option_4', 'Question_8_Correct_Answer',
+    #                     'Question_9', 'Question_9_Option_1', 'Question_9_Option_2','Question_9_Option_3','Question_9_Option_4', 'Question_9_Correct_Answer',
+    #                     'Question_10', 'Question_10_Option_1', 'Question_10_Option_2', 'Question_10_Option_3', 'Question_10_Option_4', 'Question_10_Correct_Answer',
+    #                 ]
     template_name   = "quiz/create_quiz.html"
     quiz_id = None
-    #form_class = Quiz_Model_Form
+    form_class = Quiz_Model_Form
 
     # Validate user is logged in
     def form_valid(self, form):
