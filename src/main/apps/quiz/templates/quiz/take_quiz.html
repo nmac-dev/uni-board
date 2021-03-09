@@ -2,25 +2,35 @@
 {% block main_content %}
 <div class="row">
     <h1>
-        <a class="text-warning" href="{% url 'quiz_home' %}">Quizzes</a>
+        <a class="fw-bold" style="text-decoration: none; color: black;" href="{% url 'quiz_home' %}">Quizzes</a>
         | Take Quiz
     </h1>
 </div>
+{% if quiz_model.creator == request.user %}
+    <!--Creator Buttons-->
+<div class="container">
+    <div class="row">
+        <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_quiz' quiz_model.quiz_id%}">Edit Quiz  </a>
+        <br class="col p-3"/>
+        <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_quiz' quiz_model.quiz_id%}">Delete Quiz</a>
+    </div>
+</div>
+{% endif %}
 <!--Quiz-->
 <div class="row pt-3 pb-3">
-    <div class="col rounded-3 bg-dark bg-gradient">
+    <div class="col rounded-3 bg-dark">
         <div class="row pt-3 pb-3 bg-secondary">
-            <a class="col rounded text-warning text-start">  User: {{ quiz_model.quiz_id }} </a>
-            <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
+            <img class="col-1 rounded text-warning text-light text-end" ></img>
+                <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ quiz_model.creator }} </a>
         </div>
         <div class="row pt-3">
             <!--Title-->
             <div class="row">
-                <h2 class="text-warning">Title: {{ quiz_model.title }}</h2>
+                <Legend >Title: {{ quiz_model.title }}</Legend>
             </div>
             <!--Description-->
             <div class="row pt-3">
-                <h3 class="text-start">{{ quiz_model.desc }}</h3>
+                <p class="text-start">{{ quiz_model.desc }}</p>
             </div>
         </div>
         <!--Questions-->
@@ -28,256 +38,232 @@
             <!--Q1-->
             <hr>
             <div class="row ">
-                <h3>
-                    Question 1:
-                    <br/>
-                    {{ quiz_model.Question_1 }}
-                </h3>
+                <Legend>
+                    Question 1: {{ quiz_model.Question_1 }}
+                </Legend>
             </div>
             <br/>
             <div class="row text-info">
-                <h4> <input type="radio" name="q1_opt" value="1"> 1 ~ {{ quiz_model.Question_1_Option_1 }} </h4>
+                <h5 style="color:white;"> <input  type="radio" name="q1_opt" value="1"> 1 ~ {{ quiz_model.Question_1_Option_1 }} </h4>
             </div>
             <div class="row text-info">
-                <h4> <input type="radio" name="q1_opt" value="2"> 2 ~ {{ quiz_model.Question_1_Option_2 }} </h4>
+                <h5 style="color:white;"> <input type="radio" name="q1_opt" value="2"> 2 ~ {{ quiz_model.Question_1_Option_2 }} </h4>
             </div>
             <div class="row text-info">
-                <h4> <input type="radio" name="q1_opt" value="3"> 3 ~ {{ quiz_model.Question_1_Option_3 }} </h4>
+                <h5 style="color:white;"> <input type="radio" name="q1_opt" value="3"> 3 ~ {{ quiz_model.Question_1_Option_3 }} </h4>
             </div>
             <div class="row text-info">
-                <h4> <input type="radio" name="q1_opt" value="4"> 4 ~ {{ quiz_model.Question_1_Option_4 }} </h4>
+                <h5 style="color:white;"> <input type="radio" name="q1_opt" value="4"> 4 ~ {{ quiz_model.Question_1_Option_4 }} </h4>
             </div>
             <!--Q2-->
             {% if  quiz_model.Question_2 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 2:
-                        <br/>
-                        {{ quiz_model.Question_2 }}
-                    </h3>
+                    <Legend>
+                        Question 2: {{ quiz_model.Question_2 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q2_opt" value="1"> 1 ~ {{ quiz_model.Question_2_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q2_opt" value="1"> 1 ~ {{ quiz_model.Question_2_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q2_opt" value="2"> 2 ~ {{ quiz_model.Question_2_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q2_opt" value="2"> 2 ~ {{ quiz_model.Question_2_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q2_opt" value="3"> 3 ~ {{ quiz_model.Question_2_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q2_opt" value="3"> 3 ~ {{ quiz_model.Question_2_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q2_opt" value="4"> 4 ~ {{ quiz_model.Question_2_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q2_opt" value="4"> 4 ~ {{ quiz_model.Question_2_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q3-->
             {% if  quiz_model.Question_3 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 3:
-                        <br/>
-                        {{ quiz_model.Question_3 }}
-                    </h3>
+                    <Legend>
+                        Question 3: {{ quiz_model.Question_3 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q3_opt" value="1"> 1 ~ {{ quiz_model.Question_3_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q3_opt" value="1"> 1 ~ {{ quiz_model.Question_3_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q3_opt" value="2"> 2 ~ {{ quiz_model.Question_3_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q3_opt" value="2"> 2 ~ {{ quiz_model.Question_3_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q3_opt" value="3"> 3 ~ {{ quiz_model.Question_3_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q3_opt" value="3"> 3 ~ {{ quiz_model.Question_3_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q3_opt" value="4"> 4 ~ {{ quiz_model.Question_3_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q3_opt" value="4"> 4 ~ {{ quiz_model.Question_3_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q4-->
             {% if  quiz_model.Question_4 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 4:
-                        <br/>
-                        {{ quiz_model.Question_4 }}
-                    </h3>
+                    <Legend>
+                        Question 4: {{ quiz_model.Question_4 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q4_opt" value="1"> 1 ~ {{ quiz_model.Question_4_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q4_opt" value="1"> 1 ~ {{ quiz_model.Question_4_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q4_opt" value="2"> 2 ~ {{ quiz_model.Question_4_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q4_opt" value="2"> 2 ~ {{ quiz_model.Question_4_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q4_opt" value="3"> 3 ~ {{ quiz_model.Question_4_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q4_opt" value="3"> 3 ~ {{ quiz_model.Question_4_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q4_opt" value="4"> 4 ~ {{ quiz_model.Question_4_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q4_opt" value="4"> 4 ~ {{ quiz_model.Question_4_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q5-->
             {% if  quiz_model.Question_5 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 5:
-                        <br/>
-                        {{ quiz_model.Question_5 }}
-                    </h3>
+                    <Legend>
+                        Question 5: {{ quiz_model.Question_5 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q5_opt" value="1"> 1 ~ {{ quiz_model.Question_5_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q5_opt" value="1"> 1 ~ {{ quiz_model.Question_5_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q5_opt" value="2"> 2 ~ {{ quiz_model.Question_5_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q5_opt" value="2"> 2 ~ {{ quiz_model.Question_5_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q5_opt" value="3"> 3 ~ {{ quiz_model.Question_5_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q5_opt" value="3"> 3 ~ {{ quiz_model.Question_5_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q5_opt" value="4"> 4 ~ {{ quiz_model.Question_5_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q5_opt" value="4"> 4 ~ {{ quiz_model.Question_5_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q6-->
             {% if  quiz_model.Question_6 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 6:
-                        <br/>
-                        {{ quiz_model.Question_6 }}
-                    </h3>
+                    <Legend>
+                        Question 6: {{ quiz_model.Question_6 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q6_opt" value="1"> 1 ~ {{ quiz_model.Question_6_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q6_opt" value="1"> 1 ~ {{ quiz_model.Question_6_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q6_opt" value="2"> 2 ~ {{ quiz_model.Question_6_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q6_opt" value="2"> 2 ~ {{ quiz_model.Question_6_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q6_opt" value="3"> 3 ~ {{ quiz_model.Question_6_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q6_opt" value="3"> 3 ~ {{ quiz_model.Question_6_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q6_opt" value="4"> 4 ~ {{ quiz_model.Question_6_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q6_opt" value="4"> 4 ~ {{ quiz_model.Question_6_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q7-->
             {% if  quiz_model.Question_7 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 7:
-                        <br/>
-                        {{ quiz_model.Question_7 }}
-                    </h3>
+                    <Legend>
+                        Question 7: {{ quiz_model.Question_7 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q7_opt" value="1"> 1 ~ {{ quiz_model.Question_7_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q7_opt" value="1"> 1 ~ {{ quiz_model.Question_7_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q7_opt" value="2"> 2 ~ {{ quiz_model.Question_7_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q7_opt" value="2"> 2 ~ {{ quiz_model.Question_7_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q7_opt" value="3"> 3 ~ {{ quiz_model.Question_7_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q7_opt" value="3"> 3 ~ {{ quiz_model.Question_7_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q7_opt" value="4"> 4 ~ {{ quiz_model.Question_7_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q7_opt" value="4"> 4 ~ {{ quiz_model.Question_7_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q8-->
             {% if  quiz_model.Question_8 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 8:
-                        <br/>
-                        {{ quiz_model.Question_8 }}
-                    </h3>
+                    <Legend>
+                        Question 8: {{ quiz_model.Question_8 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q8_opt" value="1"> 1 ~ {{ quiz_model.Question_8_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q8_opt" value="1"> 1 ~ {{ quiz_model.Question_8_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q8_opt" value="2"> 2 ~ {{ quiz_model.Question_8_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q8_opt" value="2"> 2 ~ {{ quiz_model.Question_8_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q8_opt" value="3"> 3 ~ {{ quiz_model.Question_8_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q8_opt" value="3"> 3 ~ {{ quiz_model.Question_8_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q8_opt" value="4"> 4 ~ {{ quiz_model.Question_8_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q8_opt" value="4"> 4 ~ {{ quiz_model.Question_8_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q9-->
             {% if  quiz_model.Question_9 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 9:
-                        <br/>
-                        {{ quiz_model.Question_9 }}
-                    </h3>
+                    <Legend>
+                        Question 9: {{ quiz_model.Question_9 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q9_opt" value="1"> 1 ~ {{ quiz_model.Question_9_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q9_opt" value="1"> 1 ~ {{ quiz_model.Question_9_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q9_opt" value="2"> 2 ~ {{ quiz_model.Question_9_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q9_opt" value="2"> 2 ~ {{ quiz_model.Question_9_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q9_opt" value="3"> 3 ~ {{ quiz_model.Question_9_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q9_opt" value="3"> 3 ~ {{ quiz_model.Question_9_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q9_opt" value="4"> 4 ~ {{ quiz_model.Question_9_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q9_opt" value="4"> 4 ~ {{ quiz_model.Question_9_Option_4 }} </h4>
                 </div>
             {% endif %}
             <!--Q10-->
             {% if  quiz_model.Question_10 != "" %}
                 <hr>
                 <div class="row ">
-                    <h3>
-                        Question 10:
-                        <br/>
-                        {{ quiz_model.Question_10 }}
-                    </h3>
+                    <Legend>
+                        Question 10: {{ quiz_model.Question_10 }}
+                    </Legend>
                 </div>
                 <br/>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q10_opt" value="1"> 1 ~ {{ quiz_model.Question_10_Option_1 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q10_opt" value="1"> 1 ~ {{ quiz_model.Question_10_Option_1 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q10_opt" value="2"> 2 ~ {{ quiz_model.Question_10_Option_2 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q10_opt" value="2"> 2 ~ {{ quiz_model.Question_10_Option_2 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q10_opt" value="3"> 3 ~ {{ quiz_model.Question_10_Option_3 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q10_opt" value="3"> 3 ~ {{ quiz_model.Question_10_Option_3 }} </h4>
                 </div>
                 <div class="row text-info">
-                    <h4> <input type="radio" name="q10_opt" value="4"> 4 ~ {{ quiz_model.Question_10_Option_4 }} </h4>
+                    <h5 style="color:white;"> <input type="radio" name="q10_opt" value="4"> 4 ~ {{ quiz_model.Question_10_Option_4 }} </h4>
                 </div>
             {% endif %}
             <hr>
-            <div class="row pt-3 text-info">
-                <p class="col text-start">  Created on: {{ quiz_model.date      |date:"d F, Y" }}</p>
-                <a class="col text-center p-1 text-warning" href="{% url 'update_quiz' quiz_model.quiz_id%}">Submit Quiz</a>
+            <div class="row">
+                <a class="col-2 mb-3 ms-3 btn btn-outline-light" href="{% url 'update_quiz' quiz_model.quiz_id%}">Submit Quiz</a>
             </div>
+            <div class="row">
+                <p class="col ms-1 text-info text-start">  Created on: {{ quiz_model.date      |date:"d F, Y" }}</p>
+            </div>
+            
         </form>
         <!--Date-->
     </div>
 </div>
-{% if quiz_model.creator == request.user %}
-    <!--Creator Buttons-->
-    <div class="row">
-        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'update_quiz' quiz_model.quiz_id%}">Edit Quiz  </a>
-        <br class="col p-3"/>
-        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'delete_quiz' quiz_model.quiz_id%}">Delete Quiz</a>
-    </div>
-{% endif %}
+<br/>
 {% endblock %}

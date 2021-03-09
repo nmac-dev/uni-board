@@ -1,5 +1,6 @@
 # forms.py
 from django import forms
+from django.utils.html import linebreaks
 from .models import Quiz_Model
 
 class Quiz_Model_Form(forms.ModelForm):
@@ -19,10 +20,10 @@ class Quiz_Model_Form(forms.ModelForm):
         # Labels
             # Q1
         self.fields['Question_1'].label   = "Question 1"
-        self.fields['Question_1_Option_1'].label   = "Question 1: Option 1"
-        self.fields['Question_1_Option_2'].label   = "Question 1: Option 2"
-        self.fields['Question_1_Option_3'].label   = "Question 1: Option 3"
-        self.fields['Question_1_Option_4'].label   = "Question 1: Option 4"
+        self.fields['Question_1_Option_1'].label   = "Question 1 Option 1"
+        self.fields['Question_1_Option_2'].label   = "Question 1 Option 2"
+        self.fields['Question_1_Option_3'].label   = "Question 1 Option 3"
+        self.fields['Question_1_Option_4'].label   = "Question 1 Option 4"
         self.fields['Question_1_Correct_Answer'].label = "Question 1: Correct Answer is Option... 1, 2, 3, or 4"
             # Q2
         self.fields['Question_2'].label   = "Question 2"
