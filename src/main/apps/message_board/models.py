@@ -23,12 +23,12 @@ class User_Post(models.Model):
     def __str__(self):
         return self.post_subject
 
-#
-#     # PK
-#     cmnt_id         = models.AutoField(     primary_key=True                )
-#     # FK
-#     cmnt_user       = models.ForeignKey(    User, on_delete=models.CASCADE  )
-#     cmnt_post_id    = models.ForeignKey(    User, on_delete=models.CASCADE  )
-#     # Attributes
-#     cmnt_date_time  = models.DateTimeField( default=timezone.now            )
-#     cmnt_details    = models.TextField(     max_length=1000                 )
+class User_Comment(models.Model):
+    # PK
+    cmnt_id = models.AutoField(     primary_key=True    )
+    # FK
+    poster  = models.ForeignKey(    User, on_delete=models.CASCADE                  )
+    post_id = models.ForeignKey(    User_Post, null=True, on_delete=models.CASCADE  )
+    # Attributes
+    date    = models.DateTimeField( default=timezone.now    )
+    details = models.TextField(     max_length=1024         )

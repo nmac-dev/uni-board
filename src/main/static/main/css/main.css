@@ -19,8 +19,8 @@
   background-image: linear-gradient(#05554C, #B9FAE8);
 }
 
-.body {
-  font-family: "Lato", sans-serif;
+body {
+  overflow-x: hidden;
 }
 
 .page-title {
@@ -64,27 +64,3 @@
 #LoginButton {
   padding: 1rem;
 }
-
-
-/* Site Visuals */
-/*
-@font-face {
-    font-family: 'OCR-B';
-    src: url('./Resources/OCR-B_Regular.ttf');
-}
-@keyframes BackgroundLoop {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 100% 0;
-  }
-
-  #animate-backlground {
-  background-size: 236%;
-  background-image: url("./Resources/Tonebox_Small.jpg");
-  background-position: 0px 0px;
-  background-repeat: repeat-x;
-  animation: BackgroundLoop 60s linear infinite alternate;
-}
-}*/

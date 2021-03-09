@@ -1,0 +1,10 @@
+<form class="row test-middle" action="{% url 'like_post_mp' user_post.pk %}" method="POST">
+{% csrf_token %}
+    <div class="col">
+    {% if user in user_post.likes.all %}
+        <button class="btn btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">{{ user_post.total_Likes }}</button>
+    {% else %}
+        <button class="btn btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">{{ user_post.total_Likes }}</button>        
+    {% endif %}
+    </div>
+</form>
