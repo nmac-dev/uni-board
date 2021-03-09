@@ -8,86 +8,86 @@ class Quiz_Model_Form(forms.ModelForm):
 
         super(Quiz_Model_Form, self).__init__(*args, **kwargs)
         # Required
-        self.fields['quiz_title'].required      = True
-        self.fields['quiz_desc'].required       = True
-        self.fields['quiz_q1_qstn'].required    = True
-        self.fields['quiz_q1_opt1'].required    = True
-        self.fields['quiz_q1_opt2'].required    = True
-        self.fields['quiz_q1_opt3'].required    = True
-        self.fields['quiz_q1_opt4'].required    = True
-        self.fields['quiz_q1_answer'].required  = True
+        self.fields['title'].required      = True
+        self.fields['desc'].required       = True
+        self.fields['Question_1'].required = True
+        self.fields['Question_1_Option_1'].required = True
+        self.fields['Question_1_Option_2'].required = True
+        self.fields['Question_1_Option_3'].required = True
+        self.fields['Question_1_Option_4'].required = True
+        self.fields['Question_1_Correct_Answer'].required  = True
         # Labels
             # Q1
-        self.fields['quiz_q1_qstn'].label   = "Question 1"
-        self.fields['quiz_q1_opt1'].label   = "Question 1: Option 1"
-        self.fields['quiz_q1_opt2'].label   = "Question 1: Option 2"
-        self.fields['quiz_q1_opt3'].label   = "Question 1: Option 3"
-        self.fields['quiz_q1_opt4'].label   = "Question 1: Option 4"
-        self.fields['quiz_q1_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_1'].label   = "Question 1"
+        self.fields['Question_1_Option_1'].label   = "Question 1: Option 1"
+        self.fields['Question_1_Option_2'].label   = "Question 1: Option 2"
+        self.fields['Question_1_Option_3'].label   = "Question 1: Option 3"
+        self.fields['Question_1_Option_4'].label   = "Question 1: Option 4"
+        self.fields['Question_1_Correct_Answer'].label = "Question 1: Correct Answer is Option... 1, 2, 3, or 4"
             # Q2
-        self.fields['quiz_q2_qstn'].label   = "Question 2"
-        self.fields['quiz_q2_opt1'].label   = "Question 2: Option 1"
-        self.fields['quiz_q2_opt2'].label   = "Question 2: Option 2"
-        self.fields['quiz_q2_opt3'].label   = "Question 2: Option 3"
-        self.fields['quiz_q2_opt4'].label   = "Question 2: Option 4"
-        self.fields['quiz_q2_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_2'].label   = "Question 2"
+        self.fields['Question_2_Option_1'].label   = "Question 2: Option 1"
+        self.fields['Question_2_Option_2'].label   = "Question 2: Option 2"
+        self.fields['Question_2_Option_3'].label   = "Question 2: Option 3"
+        self.fields['Question_2_Option_4'].label   = "Question 2: Option 4"
+        self.fields['Question_2_Correct_Answer'].label = "Question 2: Correct Answer is Option... 1, 2, 3, or 4"
             # Q3
-        self.fields['quiz_q3_qstn'].label   = "Question 3"
-        self.fields['quiz_q3_opt1'].label   = "Question 3: Option 1"
-        self.fields['quiz_q3_opt2'].label   = "Question 3: Option 2"
-        self.fields['quiz_q3_opt3'].label   = "Question 3: Option 3"
-        self.fields['quiz_q3_opt4'].label   = "Question 3: Option 4"
-        self.fields['quiz_q3_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_3'].label   = "Question 3"
+        self.fields['Question_3_Option_2'].label   = "Question 3: Option 1"
+        self.fields['Question_3_Option_3'].label   = "Question 3: Option 2"
+        self.fields['Question_3_Option_4'].label   = "Question 3: Option 3"
+        self.fields['Question_3_Option_4'].label   = "Question 3: Option 4"
+        self.fields['Question_3_Correct_Answer'].label = "Question 3: Correct Answer is Option... 1, 2, 3, or 4"
             # Q4
-        self.fields['quiz_q4_qstn'].label   = "Question 4"
-        self.fields['quiz_q4_opt1'].label   = "Question 4: Option 1"
-        self.fields['quiz_q4_opt2'].label   = "Question 4: Option 2"
-        self.fields['quiz_q4_opt3'].label   = "Question 4: Option 3"
-        self.fields['quiz_q4_opt4'].label   = "Question 4: Option 4"
-        self.fields['quiz_q4_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_4'].label   = "Question 4"
+        self.fields['Question_4_Option_1'].label   = "Question 4: Option 1"
+        self.fields['Question_4_Option_2'].label   = "Question 4: Option 2"
+        self.fields['Question_4_Option_3'].label   = "Question 4: Option 3"
+        self.fields['Question_4_Option_4'].label   = "Question 4: Option 4"
+        self.fields['Question_4_Correct_Answer'].label = "Question 4: Correct Answer is Option... 1, 2, 3, or 4"
             # Q5
-        self.fields['quiz_q5_qstn'].label   = "Question 5"
-        self.fields['quiz_q5_opt1'].label   = "Question 5: Option 1"
-        self.fields['quiz_q5_opt2'].label   = "Question 5: Option 2"
-        self.fields['quiz_q5_opt3'].label   = "Question 5: Option 3"
-        self.fields['quiz_q5_opt4'].label   = "Question 5: Option 4"
-        self.fields['quiz_q5_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_5'].label   = "Question 5"
+        self.fields['Question_5_Option_1'].label   = "Question 5: Option 1"
+        self.fields['Question_5_Option_2'].label   = "Question 5: Option 2"
+        self.fields['Question_5_Option_3'].label   = "Question 5: Option 3"
+        self.fields['Question_5_Option_4'].label   = "Question 5: Option 4"
+        self.fields['Question_5_Correct_Answer'].label = "Question 5: Correct Answer is Option... 1, 2, 3, or 4"
             # Q6
-        self.fields['quiz_q6_qstn'].label   = "Question 6"
-        self.fields['quiz_q6_opt1'].label   = "Question 6: Option 1"
-        self.fields['quiz_q6_opt2'].label   = "Question 6: Option 2"
-        self.fields['quiz_q6_opt3'].label   = "Question 6: Option 3"
-        self.fields['quiz_q6_opt4'].label   = "Question 6: Option 4"
-        self.fields['quiz_q6_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_6'].label   = "Question 6"
+        self.fields['Question_6_Option_1'].label   = "Question 6: Option 1"
+        self.fields['Question_6_Option_2'].label   = "Question 6: Option 2"
+        self.fields['Question_6_Option_3'].label   = "Question 6: Option 3"
+        self.fields['Question_6_Option_4'].label   = "Question 6: Option 4"
+        self.fields['Question_6_Correct_Answer'].label = "Question 6: Correct Answer is Option... 1, 2, 3, or 4"
             # Q7
-        self.fields['quiz_q7_qstn'].label   = "Question 7"
-        self.fields['quiz_q7_opt1'].label   = "Question 7: Option 1"
-        self.fields['quiz_q7_opt2'].label   = "Question 7: Option 2"
-        self.fields['quiz_q7_opt3'].label   = "Question 7: Option 3"
-        self.fields['quiz_q7_opt4'].label   = "Question 7: Option 4"
-        self.fields['quiz_q7_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_7'].label   = "Question 7"
+        self.fields['Question_7_Option_1'].label   = "Question 7: Option 1"
+        self.fields['Question_7_Option_2'].label   = "Question 7: Option 2"
+        self.fields['Question_7_Option_3'].label   = "Question 7: Option 3"
+        self.fields['Question_7_Option_4'].label   = "Question 7: Option 4"
+        self.fields['Question_7_Correct_Answer'].label = "Question 7: Correct Answer is Option... 1, 2, 3, or 4"
             # Q8
-        self.fields['quiz_q8_qstn'].label   = "Question 8"
-        self.fields['quiz_q8_opt1'].label   = "Question 8: Option 1"
-        self.fields['quiz_q8_opt2'].label   = "Question 8: Option 2"
-        self.fields['quiz_q8_opt3'].label   = "Question 8: Option 3"
-        self.fields['quiz_q8_opt4'].label   = "Question 8: Option 4"
-        self.fields['quiz_q8_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_8'].label   = "Question 8"
+        self.fields['Question_8_Option_1'].label   = "Question 8: Option 1"
+        self.fields['Question_8_Option_2'].label   = "Question 8: Option 2"
+        self.fields['Question_8_Option_3'].label   = "Question 8: Option 3"
+        self.fields['Question_8_Option_4'].label   = "Question 8: Option 4"
+        self.fields['Question_8_Correct_Answer'].label = "Question 8: Correct Answer is Option... 1, 2, 3, or 4"
             # Q9
-        self.fields['quiz_q9_qstn'].label   = "Question 9"
-        self.fields['quiz_q9_opt1'].label   = "Question 9: Option 1"
-        self.fields['quiz_q9_opt2'].label   = "Question 9: Option 2"
-        self.fields['quiz_q9_opt3'].label   = "Question 9: Option 3"
-        self.fields['quiz_q9_opt4'].label   = "Question 9: Option 4"
-        self.fields['quiz_q9_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_9'].label   = "Question 9"
+        self.fields['Question_9_Option_1'].label   = "Question 9: Option 1"
+        self.fields['Question_9_Option_2'].label   = "Question 9: Option 2"
+        self.fields['Question_9_Option_3'].label   = "Question 9: Option 3"
+        self.fields['Question_9_Option_4'].label   = "Question 9: Option 4"
+        self.fields['Question_9_Correct_Answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
             # Q10
-        self.fields['quiz_q10_qstn'].label   = "Question 10"
-        self.fields['quiz_q10_opt1'].label   = "Question 10: Option 1"
-        self.fields['quiz_q10_opt2'].label   = "Question 10: Option 2"
-        self.fields['quiz_q10_opt3'].label   = "Question 10: Option 3"
-        self.fields['quiz_q10_opt4'].label   = "Question 10: Option 4"
-        self.fields['quiz_q10_answer'].label = "Question 9: Correct Answer is Option... 1, 2, 3, or 4"
+        self.fields['Question_10'].label   = "Question 10"
+        self.fields['Question_10_Option_1'].label   = "Question 10: Option 1"
+        self.fields['Question_10_Option_2'].label   = "Question 10: Option 2"
+        self.fields['Question_10_Option_3'].label   = "Question 10: Option 3"
+        self.fields['Question_10_Option_4'].label   = "Question 10: Option 4"
+        self.fields['Question_10_Correct_Answer'].label = "Question 10: Correct Answer is Option... 1, 2, 3, or 4"
 
     class Meta:
         model   = Quiz_Model
-        exclude = ('quiz_id', 'quiz_creator', 'quiz_date')
+        exclude = ('quiz_id', 'creator', 'date')

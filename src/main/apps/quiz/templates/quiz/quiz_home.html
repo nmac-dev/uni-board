@@ -1,13 +1,13 @@
 {% extends "main/base.html" %}
 {% block main_content %}
 <div class="row ">
-    <h1> Quizzes </h1>
+    <h1 class="fw-bold" style="text-decoration: none; color: black;"> Quizzes </h1>
 </div>
 <!--Create Posts-->
 <div class="row">
-    <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'create_quiz' %}">Create Quiz </a>
+    <a class="col-2 btn btn-dark bg-dark" href="{% url 'create_quiz' %}">Create Quiz </a>
     <br class="col p-3"/>
-    <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'my_quizzes' %}"> My Quizzes  </a>
+    <a class="col-2 btn btn-dark bg-dark" href="{% url 'my_quizzes' %}"> My Quizzes  </a>
 </div>
 <!--Load Posts-->
 <!--HREF_TO_ADD: 
@@ -15,17 +15,19 @@
 -->
 {% for quiz_model in quiz_models %}
     <div class="row pt-3 pb-3 ">
-        <div class="col rounded-3 bg-dark bg-gradient">
+        <div class="col rounded-3 bg-dark">
             <div class="row pt-3 pb-3 bg-secondary">
-                <a class="col rounded text-warning text-start">  Creator: {{ quiz_model.creator }} </a>
-                <a class="col rounded text-warning text-end">    |ProfilePicHere|                </a>
+                <img class="col-1 rounded text-warning text-light text-end" ></img>
+                <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ quiz_model.creator }} </a>
             </div>
-            <div class="row pt-3">
-                <div class="row">
-                    <a class="text-warning" href="{% url 'take_quiz' quiz_model.quiz_id %}">Title: {{ quiz_model.title }}</a>
-                </div>
+            <div class="position-relative">
                 <div class="row pt-3">
-                    <p class="text-start">{{ quiz_model.desc }}</p>
+                    <div class="row">
+                        <Legend><a class="stretched-link" style="text-decoration: none; color:white;" href="{% url 'take_quiz' quiz_model.quiz_id %}">Title: {{ quiz_model.title }}</a></Legend>
+                    </div>
+                    <div class="row pt-3">
+                        <p class="text-start">{{ quiz_model.desc }}</p>
+                    </div>
                 </div>
             </div>
             <div class="row pt-3 text-info">
