@@ -21,13 +21,13 @@
 <div class="row pt-3 pb-3 ">
     <div class="col rounded-3 pb-3 bg-dark">
 {% for entrie in leaderboard %}
-
+            {% if entrie.points > 0 %}
             <div class="row pt-4">
                 
                 <p class="col text-start" style="text-decoration: none; color:white; font-size:22px;" >  {{entrie.user}}</p>
                 <p class="col text-end" style="text-decoration: none; color:white; font-size:22px;">    {{entrie.points}}</p>
             </div>
-
+            {% endif %}
     {% endfor %}
 {% endblock %} 
 
