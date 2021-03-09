@@ -10,9 +10,9 @@
 <div class="container">
 {% if user_post.post_user == request.user %}
     <div class="row">
-        <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
         <br class="col"/>
-        <a class="col-2 text-center p-3 rounded bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
     </div>
 {% endif %}
 </div>
@@ -20,7 +20,7 @@
 <div class="row pt-3 pb-3">
     <div class="col rounded-3 bg-dark">
         <div class="row pt-3 pb-3 rounded bg-secondary">
-            <img class="col-1 rounded text-warning text-light text-end" ></img>
+            <img class="col-1 rounded"></img>
                 <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ user_post.post_user }} </a>
         </div>
         <div class="position-relative">
@@ -33,17 +33,17 @@
                 </div>
             </div>
         </div>
-        <div class="row pt-3 text-info">
+        <div class="row text-info">
             <p class="col test-middle"><form action="{% url 'like_post_pd' user_post.pk %}" method="POST">
                 {% csrf_token %}
 
                 {% if user in user_post.likes.all %}
                 <div >
-                    <button class="btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                    <button class="btn btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>         {{ user_post.total_Likes }}
                 </div>
                 {% else %}
                 <div >
-                    <button class="btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button> | {{ user_post.total_Likes }}
+                    <button class="btn btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>        {{ user_post.total_Likes }}
                 </div>
                 {% endif %}
             </form></p>
