@@ -4,20 +4,20 @@
         <form method="POST">
             {% csrf_token %}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Log In</legend>
+                <legend class="border-bottom mb-4" style="" >Login</legend>
                 {{ form }}
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-light" style="margin:10px;" type="submit">Log In</button>
+                <button class="btn btn-outline-dark" style="margin:10px;" type="submit">Login</button>
             </div>
         </form>
         <div class="border-top pt-3">
             <small class="text-muted">
-                Don't have an account?<a class="ml-2" href="{% url 'register' %}">Register here</a></small>
+                <a class="ml-2" href="{% url 'register' %}">Don't have an account?</a></small>
         </div>
         <div>
             <small class="text-muted">
-                Forgotten your password?  <a class="ml-2" href="{% url 'reset_password' %}">Reset it here</a></small>
+                <a class="ml-2" href="{% url 'reset_password' %}">Forgotten your password?</a></small>
         </div>
     </div>
 {% endblock content %}

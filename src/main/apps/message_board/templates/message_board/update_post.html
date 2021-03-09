@@ -2,18 +2,19 @@
 {% block main_content %}
 <div class="row ">
     <h1> 
-        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        <a class="fw-bold" style="text-decoration: none; color: black;" href="{% url 'message_board' %}">Message Board</a>
         | Update Post
     </h1>
 </div>
+<br/>
 <div class="row">
     <form method="POST">
         {% csrf_token %}
-        <fieldset class="row rounded-3 bg-dark bg-gradient">
+        <fieldset class="row rounded-3 bg-dark">
             {{ form }}
         </fieldset>
         <div class="row pt-3">
-            <button class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" type="submit">Update Post</button>
+            <button class="col-2 btn btn-outline-dark" type="submit">Update Post</button>
         </div>
     </form>
 </div>
