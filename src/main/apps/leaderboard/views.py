@@ -11,3 +11,4 @@ class leaderboard(ListView):
     ordering            = ['-points']                   # Orders to most points
     context_object_name = 'leaderboard'
     template_name       = 'leaderboard/leaderboard.html'
+    paginate_by = 4

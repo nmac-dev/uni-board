@@ -1,0 +1,25 @@
+{% extends "main/base.html" %}
+{% block main_content %}
+<div class="row ">
+    <h1 class="fw-bold" style="text-decoration: none; color: black;"> Quiz Results </h1>
+</div>
+<!--Create Posts-->
+
+<!--Load Posts-->
+<!--HREF_TO_ADD: 
+    href=" user_post.op_user "
+-->
+<div class="row pt-3 pb-3">
+    <div class="col rounded-3 bg-dark">
+        <div class="row pt-3 pb-3 rounded bg-secondary">
+            
+         <h2>{{message}}</h2>
+         <h2>{{score}}/{{totalQuestions}}</h2>
+        </div>
+    </div>
+    <div class="row pt-3">
+        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'quiz_home' %}">Back to Quizzes</a>
+    </div>
+</div>
+
+{% endblock %}

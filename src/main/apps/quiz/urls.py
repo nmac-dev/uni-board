@@ -6,6 +6,7 @@ from .views import (
     Update_Quiz,
     Delete_Quiz,
     My_Quizzes,
+    Quiz_Results
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path('<int:pk>/update/',    Update_Quiz.as_view(),      name='update_quiz'  ),
     path('<int:pk>/delete/',    Delete_Quiz.as_view(),      name='delete_quiz'  ),
     path('my_posts/',           My_Quizzes.as_view(),       name='my_quizzes'   ),
+    path('results',    Quiz_Results,      name='quiz_results'),
 ]

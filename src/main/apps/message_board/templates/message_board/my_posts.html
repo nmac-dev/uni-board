@@ -12,13 +12,38 @@
 {% for user_post in user_posts %}    
     {% if user_post.post_user == request.user %}
         {% include "message_board/load_post_snippet.html" %}
-    {% endif %}
-    <div class="container">
+    
+    <div class="container-fluid">
         <div class="row">
-            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
-            <br class="col"/>
-            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        <div class="col-xs">
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        </div>
         </div>
     </div>
+    {% endif %}
+    
 {% endfor %}
+
+<div class="row pt-3">
+<div class="col-xs">
+    <span class="step-links rounded py-2 bg-dark">
+    {% if page_obj.paginator.num_pages != null %}
+        {% if page_obj.has_previous %}
+            <a class=" ps-1 text-decoration-none text-white" href="?page=1">&laquo; first</a>
+            <a class=" text-decoration-none text-white" href="?page={{ page_obj.previous_page_number }}">| previous |</a>
+        {% endif %}
+        <span class="px-1">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+            <a class="text-decoration-none text-white" href="?page={{ page_obj.next_page_number }}">| next |</a>
+            <a class="pe-1 text-decoration-none text-white" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    {% endif %}
+    </span>
+</div>
+</div>
+
+<br/> 
 {% endblock %}

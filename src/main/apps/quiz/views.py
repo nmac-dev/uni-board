@@ -1,8 +1,9 @@
-from django.shortcuts           import render
+from django.shortcuts           import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
 from .models                    import Quiz_Model
 from .forms                     import Quiz_Model_Form
+
 from django.views.generic import (
     ListView,
     DetailView,
@@ -17,6 +18,7 @@ class Quiz_Home(ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/quiz_home.html'
+    paginate_by = 4
 
 class Quiz_Detail(DetailView):
     model = Quiz_Model
@@ -82,3 +84,106 @@ class My_Quizzes(LoginRequiredMixin, ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/my_quizzes.html'
+    paginate_by = 4
+
+
+def Quiz_Results(response):
+    
+    quizTanken = get_object_or_404(Quiz_Model, quiz_id=response.POST.get('quiz_id'))
+    answers = response.POST
+    print(response.POST)
+    print(quizTanken.Question_1_Correct_Answer)
+
+    print(quizTanken.Question_3_Correct_Answer)
+    print(type(quizTanken.Question_3_Correct_Answer))
+
+    score = 0
+    totalQuestions = 0
+    try:
+        if(quizTanken.Question_1_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q1_opt')) == quizTanken.Question_1_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_2_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q2_opt')) == quizTanken.Question_2_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_3_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q3_opt')) == quizTanken.Question_3_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_4_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q4_opt')) == quizTanken.Question_4_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_5_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q5_opt')) == quizTanken.Question_5_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_6_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q6_opt')) == quizTanken.Question_6_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_7_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q7_opt')) == quizTanken.Question_7_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_8_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q8_opt')) == quizTanken.Question_8_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_9_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q9_opt')) == quizTanken.Question_9_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(quizTanken.Question_10_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q10_opt')) == quizTanken.Question_10_Correct_Answer):
+            score +=1
+    except:
+        pass
+
+    if (score/totalQuestions)*100 == 100:
+        message = "Brilliant!"
+    elif (score/totalQuestions)*100 > 70:
+        message = "Good Job!"
+
+    elif (score/totalQuestions)*100 > 40:
+        message = "Not bad!"
+    else:
+        message = "Better luck next time!"
+
+    args = {}
+    args['totalQuestions'] = totalQuestions
+    args['score'] = score
+    args['message'] = message
+
+    return render(response, "quiz/quiz_results.html", args)
+

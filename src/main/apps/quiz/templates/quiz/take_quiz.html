@@ -8,15 +8,15 @@
 </div>
 {% if quiz_model.creator == request.user %}
     <!--Creator Buttons-->
-<div class="container">
-    <div class="row">
-        <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_quiz' quiz_model.quiz_id%}">Edit Quiz  </a>
-        <br class="col p-3"/>
-        <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_quiz' quiz_model.quiz_id%}">Delete Quiz</a>
-    </div>
+<div class="row">
+<div class="col-xs">
+    <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_quiz' quiz_model.quiz_id%}">Edit Quiz  </a>
+    <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_quiz' quiz_model.quiz_id%}">Delete Quiz</a>
+</div>
 </div>
 {% endif %}
 <!--Quiz-->
+<div class="container">
 <div class="row pt-3 pb-3">
     <div class="col rounded-3 bg-dark">
         <div class="row pt-3 pb-3 bg-secondary">
@@ -34,7 +34,8 @@
             </div>
         </div>
         <!--Questions-->
-        <form action="/SOMESOME">
+        <form action="{%url 'quiz_results' %}" method="POST">
+            {% csrf_token %}
             <!--Q1-->
             <hr>
             <div class="row ">
@@ -255,15 +256,21 @@
             {% endif %}
             <hr>
             <div class="row">
-                <a class="col-2 mb-3 ms-3 btn btn-outline-light" href="{% url 'update_quiz' quiz_model.quiz_id%}">Submit Quiz</a>
+
+            <div class="col-xs">
+                <button class=" mb-3 ms-3 btn btn-outline-light" name="quiz_id" value="{{quiz_model.quiz_id }}">Submit Quiz</a>
+            </div>
+
             </div>
             <div class="row">
                 <p class="col ms-1 text-info text-start">  Created on: {{ quiz_model.date      |date:"d F, Y" }}</p>
             </div>
             
+            
         </form>
         <!--Date-->
     </div>
+</div>
 </div>
 <br/>
 {% endblock %}
