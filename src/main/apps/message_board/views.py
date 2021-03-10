@@ -87,7 +87,7 @@ class My_Posts(LoginRequiredMixin, ListView):
     template_name       = 'message_board/my_posts.html'
 
 
-def like_post_mb(request, pk):
+def like_post(request, pk, current_url):
     post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
 
     liked = False
@@ -99,35 +99,7 @@ def like_post_mb(request, pk):
         post.likes.add(request.user)
         liked = True
         addPoint(post)
-    return HttpResponseRedirect(reverse('message_board'))
-
-def like_post_mp(request, pk):
-    post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
-
-    liked = False
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
-        liked = False
-        losePoint(post)
-    else:
-        post.likes.add(request.user)
-        liked = True
-        addPoint(post)
-    return HttpResponseRedirect(reverse('my_posts'))
-
-def like_post_pd(request, pk):
-    post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
-
-    liked = False
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
-        liked = False
-        losePoint(post)
-    else:
-        post.likes.add(request.user)
-        liked = True
-        addPoint(post)
-    return HttpResponseRedirect(reverse('post_detail',kwargs={'pk': request.POST.get('post_id')}))
+    return HttpResponseRedirect(current_url)
 
 def addPoint(post):
     leaderboard = Leaderboard()
