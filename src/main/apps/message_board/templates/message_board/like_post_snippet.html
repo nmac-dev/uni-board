@@ -1,4 +1,8 @@
-<form class="row test-middle" action="{% url 'like_post' user_post.pk request.path %}" method="POST">
+{% if 'search_posts' in request.path %}
+    <form class="row test-middle" action="{% url 'like_post' user_post.pk "/message_board/" %}" method="POST">
+{% else %}
+    <form class="row test-middle" action="{% url 'like_post' user_post.pk request.path %}" method="POST">
+{% endif %}
 {% csrf_token %}
     <div class="col">
     {% if user in user_post.likes.all %}

@@ -94,6 +94,7 @@ class Search_Posts(ListView):
     template_name       = 'message_board/message_board.html'
 
     def get_queryset(self):
+        
         search_query = self.request.GET.get('search-text')
         return User_Post.objects.filter(Q(post_tags__icontains=search_query) | Q(post_subject__icontains=search_query)).order_by('-post_date')
 
