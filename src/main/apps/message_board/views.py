@@ -1,7 +1,9 @@
-from django.shortcuts           import render
+from django.shortcuts           import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
 from .models                    import User_Post
+from django.http                import HttpResponseRedirect
+from main.apps.leaderboard.models import Leaderboard
 from django.views.generic import (
     ListView,
     DetailView,
