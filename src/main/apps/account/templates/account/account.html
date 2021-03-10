@@ -12,17 +12,19 @@
     <div class="row pt-3">
         {% block login_options %}
         {% if user.is_authenticated %}
-        <div class="row">
-            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'profile' %}">Profile</a>
-            <br/>
-            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'logout' %}">Log Out</a>
+        <div class="row container-fluid">
+            <div class="col-xs">
+                <a class="me-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'profile' %}">Profile</a>
+                <a class="btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'logout' %}">Log Out</a>
+            </div>
         </div>
         </div>
         {% else %}
-        <div class="row">
-            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'login' %}" role="button">Login</a>
-            <br/>
-            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'register' %}" role="button">Register</a>
+        <div class="row container-fluid">
+            <div class="col-xs">
+                <a class="me-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'login' %}" role="button">Login</a>
+                <a class="btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'register' %}" role="button">Register</a>
+            </div>
         </div class="row">
         {% endif %}
         {% endblock %}

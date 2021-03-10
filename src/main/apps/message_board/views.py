@@ -13,7 +13,6 @@ from django.views.generic import (
     DeleteView
 )
 
-
 # Main Message Board Page
 class Message_Board(ListView):
     model               = User_Post
@@ -54,13 +53,13 @@ class Update_Post(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         self.post_id    =   post.post_id
         return super().form_valid(form)
 
-    # Validate user owns post
+    # Validate user owns post or is a staff member
     def test_func(self):
-        isPostOwner = False
+        isPostOwnerOrStaff = False
         post_detail = self.get_object()
-        if self.request.user == post_detail.post_user:
-            isPostOwner = True
-        return isPostOwner
+        if self.request.user == post_detail.post_user or self.request.user.is_staff == True:
+            isPostOwnerOrStaff = True
+        return isPostOwnerOrStaff
 
     def get_success_url(self):
         return reverse('post_detail', kwargs={'pk': self.post_id})
@@ -69,13 +68,13 @@ class Delete_Post(DeleteView):
     model = User_Post
     template_name   = "message_board/delete_post_confirm.html"
 
-    # Validate user owns post
+    # Validate user owns post or is a staff member
     def test_func(self):
-        isPostOwner = False
+        isPostOwnerOrStaff = False
         post_detail = self.get_object()
-        if self.request.user == post_detail.post_user:
-            isPostOwner = True
-        return isPostOwner
+        if self.request.user == post_detail.post_user or self.request.user.is_staff == True:
+            isPostOwnerOrStaff = True
+        return isPostOwnerOrStaff
 
     def get_success_url(self):
         return reverse('my_posts')
@@ -97,7 +96,6 @@ class Search_Posts(ListView):
         
         search_query = self.request.GET.get('search-text')
         return User_Post.objects.filter(Q(post_tags__icontains=search_query) | Q(post_subject__icontains=search_query)).order_by('-post_date')
-
 
 # Like Posts
 def like_post(request, pk, current_url):
@@ -140,4 +138,4 @@ def losePoint(post):
     else:
         obj.points = obj.points - 1
 
-    obj.save()
+    obj.save() 

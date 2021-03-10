@@ -1,0 +1,11 @@
+#!/bin/bash
+cd src
+pwd
+docker build -t uni-board .
+ibmcloud cr login
+kubectl -n team-w delete pod,svc,deployment --all
+docker tag uni-board uk.icr.io/team-w/uni-board:latest
+docker push uk.icr.io/team-w/uni-board:latest
+kubectl create -f deployment.yml
+kubectl create -f service.yml
+kubectl get service -n team-w

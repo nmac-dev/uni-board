@@ -5,11 +5,12 @@
     <h1 class="fw-bold" style="text-decoration: none; color: black;"> Message Board </h1>
 </div>
 <!--Create Posts-->
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'create_post' %}">Create Post</a>
-        <br class="col"/>
-        <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'my_posts' %}">My Posts</a>
+        <div class="col-xs">
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'create_post' %}">Create Post</a>
+            <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'my_posts' %}">My Posts</a>
+        </div>
     </div>
 </div>
 <!--Search Bar-->
