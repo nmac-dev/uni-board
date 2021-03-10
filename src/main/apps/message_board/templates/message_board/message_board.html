@@ -2,7 +2,9 @@
 
 {% block main_content %}
 <div class="row">
-    <h1 class="fw-bold" style="text-decoration: none; color: black;"> Message Board </h1>
+    <h1 class="fw-bold">
+        <a style="text-decoration: none; color: black;" href="{% url 'message_board' %}"> Message Board </a>
+    </h1>
 </div>
 <!--Create Posts-->
 <div class="container-fluid">
