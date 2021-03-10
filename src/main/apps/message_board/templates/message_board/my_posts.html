@@ -11,13 +11,17 @@
 {% for user_post in user_posts %}    
     {% if user_post.post_user == request.user %}
         {% include "message_board/load_post_snippet.html" %}
-    {% endif %}
-    <div class="container">
+    
+    <div class="container-fluid">
         <div class="row">
-            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
-            <br class="col"/>
-            <a class="col-2 btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        <div class="col-xs">
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+        </div>
         </div>
     </div>
+    {% endif %}
+    
 {% endfor %}
+<br/> 
 {% endblock %}
