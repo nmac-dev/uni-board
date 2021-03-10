@@ -34,7 +34,8 @@
             </div>
         </div>
         <!--Questions-->
-        <form action="/SOMESOME">
+        <form action="{%url 'quiz_results' %}" method="POST">
+            {% csrf_token %}
             <!--Q1-->
             <hr>
             <div class="row ">
@@ -255,9 +256,11 @@
             {% endif %}
             <hr>
             <div class="row">
+
             <div class="col-xs">
                 <a class="mb-3 ms-3 btn btn-outline-light" href="{% url 'update_quiz' quiz_model.quiz_id%}">Submit Quiz</a>
             </div>
+
             </div>
             <div class="row">
                 <p class="col ms-1 text-info text-start">  Created on: {{ quiz_model.date      |date:"d F, Y" }}</p>
