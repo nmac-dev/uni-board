@@ -88,18 +88,22 @@ class My_Posts(LoginRequiredMixin, ListView):
 
 
 def like_post(request, pk, current_url):
-    post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
 
-    liked = False
-    if post.likes.filter(id=request.user.id).exists():
-        post.likes.remove(request.user)
+    try: 
+        post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
+
         liked = False
-        losePoint(post)
-    else:
-        post.likes.add(request.user)
-        liked = True
-        addPoint(post)
-    return HttpResponseRedirect(current_url)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            liked = False
+            losePoint(post)
+        else:
+            post.likes.add(request.user)
+            liked = True
+            addPoint(post)
+        return HttpResponseRedirect(current_url)
+    except:
+        return HttpResponseRedirect('/account/login')
 
 def addPoint(post):
     leaderboard = Leaderboard()
