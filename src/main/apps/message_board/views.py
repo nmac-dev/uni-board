@@ -20,6 +20,7 @@ class Message_Board(ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/message_board.html'
+    paginate_by = 4
     
 class Post_Detail(DetailView):
     model = User_Post
@@ -140,11 +141,3 @@ def losePoint(post):
         obj.points = obj.points - 1
 
     obj.save() 
-
-
-class PostViewPagin(ListView):
-    model = User_Post
-    template_name = 'message_board/messageboard.html'
-    context_object_name = 'posts'
-    paginate_by = 5
-    queryset = User_Post.objects.all()
