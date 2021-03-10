@@ -1,8 +1,9 @@
-from django.shortcuts           import render
+from django.shortcuts           import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
 from .models                    import Quiz_Model
 from .forms                     import Quiz_Model_Form
+
 from django.views.generic import (
     ListView,
     DetailView,
@@ -82,3 +83,78 @@ class My_Quizzes(LoginRequiredMixin, ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/my_quizzes.html'
+
+def Quiz_Results(response):
+    
+    quizTanken = get_object_or_404(Quiz_Model, quiz_id=response.POST.get('quiz_id'))
+    answers = response.POST
+    print(response.POST)
+    print(quizTanken.Question_1_Correct_Answer)
+
+    score = 0
+    try:
+        if(int(answers.get('q1_opt')) == quizTanken.Question_1_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q2_opt')) == quizTanken.Question_2_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q3_opt')) == quizTanken.Question_3_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q4_opt')) == quizTanken.Question_4_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q5_opt')) == quizTanken.Question_5_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q6_opt')) == quizTanken.Question_6_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q7_opt')) == quizTanken.Question_7_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q8_opt')) == quizTanken.Question_8_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q1_opt')) == quizTanken.Question_9_Correct_Answer):
+            score +=1
+    except:
+        pass
+    try:
+        if(int(answers.get('q1_opt')) == quizTanken.Question_10_Correct_Answer):
+            score +=1
+    except:
+        pass
+
+    if score == 10:
+        message = "Brilliant!"
+    elif score > 7:
+        message = "Good Job!"
+
+    elif score > 4:
+        message = "Not bad!"
+    else:
+        message = "Better luck next time!"
+
+    args = {}
+    args['score'] = score
+    args['message'] = message
+
+    return render(response, "quiz/quiz_results.html", args)
