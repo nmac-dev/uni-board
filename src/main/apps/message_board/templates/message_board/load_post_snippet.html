@@ -7,19 +7,21 @@
         <div class="position-relative">
             <div class="row pt-3">
                 <div class="row">
-                    <Legend>Subject: {{ user_post.post_subject }}</Legend>
+                    <Legend>
+                        <a class="stretched-link text-decoration-none text-white" href="{% url 'post_detail' user_post.post_id %}">Subject: {{ user_post.post_subject }}</a>
+                    </Legend>
                 </div>
                 <div class="row pt-3">
                     <p class="text-start">{{ user_post.post_content }}</p>
                 </div>
             </div>
-            <div class="row text-info">
-                <!--Likes-->
-                {% include "message_board/like_post_snippet.html" %}
-                <!--Dates-->
-                <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
-                <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
-            </div>
+        </div>
+        <div class="row text-info">
+            <!--Likes-->
+            {% include "message_board/like_post_snippet.html" %}
+            <!--Dates-->
+            <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
+            <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
         </div>
     </div>
 </div>

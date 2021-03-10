@@ -34,19 +34,9 @@
             </div>
         </div>
         <div class="row text-info">
-            <p class="col test-middle"><form action="{% url 'like_post_pd' user_post.pk %}" method="POST">
-                {% csrf_token %}
-
-                {% if user in user_post.likes.all %}
-                <div >
-                    <button class="btn btn-primary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>         {{ user_post.total_Likes }}
-                </div>
-                {% else %}
-                <div >
-                    <button class="btn btn-secondary" type="submit", name="post_id", value="{{user_post.post_id }}">Like</button>        {{ user_post.total_Likes }}
-                </div>
-                {% endif %}
-            </form></p>
+            <!--Likes-->
+            {% include "message_board/like_post_snippet.html" %}
+            <!--Dates-->
             <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
             <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
         </div>
