@@ -81,3 +81,45 @@ class My_Posts(LoginRequiredMixin, ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/my_posts.html'
+
+def like_post(request, pk, current_url):
+
+    try: 
+        post = get_object_or_404(User_Post, post_id=request.POST.get('post_id'))
+
+        liked = False
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            liked = False
+            losePoint(post)
+        else:
+            post.likes.add(request.user)
+            liked = True
+            addPoint(post)
+        return HttpResponseRedirect(current_url)
+    except:
+        return HttpResponseRedirect('/account/login')
+
+def addPoint(post):
+    leaderboard = Leaderboard()
+
+    obj, created = Leaderboard.objects.get_or_create(user=post.post_user)
+
+    if created == True:
+        obj.points = 1
+    else:
+        obj.points = obj.points + 1
+
+    obj.save()
+
+def losePoint(post):
+    leaderboard = Leaderboard()
+
+    obj, created = Leaderboard.objects.get_or_create(user=post.post_user)
+
+    if created == True:
+        obj.points = 0
+    else:
+        obj.points = obj.points - 1
+
+    obj.save() 
