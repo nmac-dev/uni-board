@@ -4,12 +4,11 @@
     <h1 class="fw-bold" style="text-decoration: none; color: black;"> Quizzes </h1>
 </div>
 <!--Create Posts-->
-<div class="container">
-    <div class="row">
-        <a class="col-2 btn btn-dark bg-dark" href="{% url 'create_quiz' %}">Create Quiz </a>
-        <br class="col p-3"/>
-        <a class="col-2 btn btn-dark bg-dark" href="{% url 'my_quizzes' %}"> My Quizzes  </a>
-    </div>
+<div class="row">
+<div class="col-xs">
+    <a class="me-3 btn btn-dark bg-dark" href="{% url 'create_quiz' %}">Create Quiz </a>
+    <a class=" btn btn-dark bg-dark" href="{% url 'my_quizzes' %}"> My Quizzes  </a>
+</div>
 </div>
 <!--Load Posts-->
 <!--HREF_TO_ADD: 
@@ -18,4 +17,26 @@
 {% for quiz_model in quiz_models %}
     {% include "quiz/quiz_feed_template.html" %}
 {% endfor %}
+<div class="row pt-3">
+<div class="col-xs">
+    <span class="step-links rounded py-2 bg-dark">
+    {% if page_obj.paginator.num_pages != null %}
+        {% if page_obj.has_previous %}
+            <a class=" ps-1 text-decoration-none text-white" href="?page=1">&laquo; first</a>
+            <a class=" text-decoration-none text-white" href="?page={{ page_obj.previous_page_number }}">| previous |</a>
+        {% endif %}
+        <span class="px-1">
+            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+        </span>
+        {% if page_obj.has_next %}
+            <a class="text-decoration-none text-white" href="?page={{ page_obj.next_page_number }}">| next |</a>
+            <a class="pe-1 text-decoration-none text-white" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    {% endif %}
+    </span>
+</div>
+</div>
+
+<br/>
+
 {% endblock %}

@@ -5,6 +5,7 @@ from .models                    import User_Post, User_Comment
 from django.http                import HttpResponseRedirect
 from django.db.models           import Q
 from main.apps.leaderboard.models import Leaderboard
+from django.core.paginator import Paginator
 from django.views.generic import (
     ListView,
     DetailView,
@@ -19,6 +20,7 @@ class Message_Board(ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/message_board.html'
+    paginate_by = 4
     
 class Post_Detail(DetailView):
     model = User_Post
@@ -84,6 +86,7 @@ class My_Posts(LoginRequiredMixin, ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/my_posts.html'
+    paginate_by = 4
 
 # Search Posts
 class Search_Posts(ListView):
