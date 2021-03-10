@@ -52,4 +52,4 @@ Load an admin user with username and password "admin", and loads in example post
 `loaddata test_data.json`  
 ### IBM Cloud
 Build container image with docker, upload to IBM cloud registry, then deploy container to Kubernetes.  
-This can all be done in one step using the ibm_reimage bash script found under uni-board. Run with ./ibm_reimage. The external IP used to access the site will be displayed after the ./ibm_reimage script is run. To access the site, visite [external IP]:8080.
+This can all be done in one step using the ibm_reimage bash script found under uni-board. Run with `./ibm_reimage`. The external IP used to access the site will be displayed after the ./ibm_reimage script is run. To access the site, visit [external IP]:8080 in your browser.
