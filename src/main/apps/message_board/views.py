@@ -4,6 +4,7 @@ from django.urls                import reverse
 from .models                    import User_Post
 from django.http                import HttpResponseRedirect
 from main.apps.leaderboard.models import Leaderboard
+from django.core.paginator import Paginator
 from django.views.generic import (
     ListView,
     DetailView,
@@ -125,3 +126,11 @@ def losePoint(post):
         obj.points = obj.points - 1
 
     obj.save() 
+
+
+class PostViewPagin(ListView):
+    model = User_Post
+    template_name = 'message_board/messageboard.html'
+    context_object_name = 'posts'
+    paginate_by = 5
+    queryset = User_Post.objects.all()
