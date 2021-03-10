@@ -18,3 +18,5 @@ spec:
         image: uk.icr.io/team-w/uni-board
         ports:
         - containerPort: 8080
+      imagePullSecrets:
+      - name: all-icr-io
