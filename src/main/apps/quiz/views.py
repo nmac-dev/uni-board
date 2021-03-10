@@ -92,69 +92,94 @@ def Quiz_Results(response):
     print(response.POST)
     print(quizTanken.Question_1_Correct_Answer)
 
+    print(quizTanken.Question_3_Correct_Answer)
+    print(type(quizTanken.Question_3_Correct_Answer))
+
     score = 0
+    totalQuestions = 0
     try:
+        if(quizTanken.Question_1_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q1_opt')) == quizTanken.Question_1_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_2_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q2_opt')) == quizTanken.Question_2_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_3_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q3_opt')) == quizTanken.Question_3_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_4_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q4_opt')) == quizTanken.Question_4_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_5_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q5_opt')) == quizTanken.Question_5_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_6_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q6_opt')) == quizTanken.Question_6_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_7_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q7_opt')) == quizTanken.Question_7_Correct_Answer):
             score +=1
     except:
         pass
     try:
+        if(quizTanken.Question_8_Correct_Answer is not None):
+            totalQuestions +=1
         if(int(answers.get('q8_opt')) == quizTanken.Question_8_Correct_Answer):
             score +=1
     except:
         pass
     try:
-        if(int(answers.get('q1_opt')) == quizTanken.Question_9_Correct_Answer):
+        if(quizTanken.Question_9_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q9_opt')) == quizTanken.Question_9_Correct_Answer):
             score +=1
     except:
         pass
     try:
-        if(int(answers.get('q1_opt')) == quizTanken.Question_10_Correct_Answer):
+        if(quizTanken.Question_10_Correct_Answer is not None):
+            totalQuestions +=1
+        if(int(answers.get('q10_opt')) == quizTanken.Question_10_Correct_Answer):
             score +=1
     except:
         pass
 
-    if score == 10:
+    if (score/totalQuestions)*100 == 100:
         message = "Brilliant!"
-    elif score > 7:
+    elif (score/totalQuestions)*100 > 70:
         message = "Good Job!"
 
-    elif score > 4:
+    elif (score/totalQuestions)*100 > 40:
         message = "Not bad!"
     else:
         message = "Better luck next time!"
 
     args = {}
+    args['totalQuestions'] = totalQuestions
     args['score'] = score
     args['message'] = message
 
