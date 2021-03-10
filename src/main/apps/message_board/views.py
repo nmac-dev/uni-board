@@ -86,6 +86,7 @@ class My_Posts(LoginRequiredMixin, ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/my_posts.html'
+    paginate_by = 4
 
 # Search Posts
 class Search_Posts(ListView):

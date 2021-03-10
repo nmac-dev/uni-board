@@ -23,6 +23,7 @@
 <div class="row">
 <div class="col-xs">
     <span class="step-links rounded py-2 bg-dark">
+    {% if page_obj.paginator.num_pages != null %}
         {% if page_obj.has_previous %}
             <a class=" ps-1 text-decoration-none text-white" href="?page=1">&laquo; first</a>
             <a class=" text-decoration-none text-white" href="?page={{ page_obj.previous_page_number }}">| previous |</a>
@@ -34,6 +35,7 @@
             <a class="text-decoration-none text-white" href="?page={{ page_obj.next_page_number }}">| next |</a>
             <a class="pe-1 text-decoration-none text-white" href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
         {% endif %}
+    {% endif %}
     </span>
 </div>
 </div>
