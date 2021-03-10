@@ -5,14 +5,15 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
-                {{ form }}
+                {{ form.as_p }}
+                <p>I have read and agree to UniBoard's <a href="{% url 'terms' %}">Ts&Cs</a></p>
             </fieldset>
             <div class="form-group">
-                <button class="btn btn-outline-dark" style="margin:10px;" type="submit">Register</button>
+                <button class="btn btn-dark" style="margin:10px;" type="submit">Register</button>
             </div>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">
+            <small style="color: black;">
                 Already have an account? <a class="ml-2" href="{% url 'login' %}"> Sign in</a></small>
         </div>
     </div>
