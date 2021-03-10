@@ -1,7 +1,7 @@
 from django.shortcuts           import render, get_object_or_404
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
-from .models                    import User_Post
+from .models                    import User_Post, User_Comment
 from django.http                import HttpResponseRedirect
 from django.db.models           import Q
 from main.apps.leaderboard.models import Leaderboard
@@ -99,6 +99,42 @@ class Search_Posts(ListView):
         
         search_query = self.request.GET.get('search-text')
         return User_Post.objects.filter(Q(post_tags__icontains=search_query) | Q(post_subject__icontains=search_query)).order_by('-post_date')
+
+# Comment system
+
+class Add_Comment(LoginRequiredMixin, CreateView):
+    model           = User_Comment
+    fields          = ['comment']
+    #form_class      = Add_Comment_Form
+    template_name   = "message_board/add_comment.html"
+    cmnt_id = None
+    post_id = None
+
+    # Validate user is logged in
+    def form_valid(self, form):
+        form.instance.post_id   = self.kwargs['pk']
+        form.instance.cmnt_user = self.request.user
+        comment         =   form.save()
+        self.cmnt_id    =   comment.cmnt_id
+        return super().form_valid(form)
+
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={'pk': self.kwargs['pk']})
+
+class Delete_Comment(DeleteView):
+    model           = User_Comment
+    template_name   = "message_board/delete_comment_confirm.html"
+
+    # Validate user owns post or is a staff member
+    def test_func(self):
+        isPostOwnerOrStaff = False
+        post_detail = self.get_object()
+        if self.request.user == post_detail.post_user or self.request.user.is_staff == True:
+            isPostOwnerOrStaff = True
+        return isPostOwnerOrStaff
+
+    def get_success_url(self):
+        return reverse('message_board')
 
 # Like Posts
 def like_post(request, pk, current_url):
