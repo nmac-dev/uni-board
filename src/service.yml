@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+ name: uni-board
+ namespace: team-w
+spec:
+ type: LoadBalancer
+ selector:
+   bb: web
+ ports:
+  - name: http
+    protocol: TCP
+    port: 8080
+    targetPort: 8080
+  - name: https
+    protocol: TCP
+    port: 443
+ externalTrafficPolicy: Local

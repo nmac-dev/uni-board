@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: uni-board
+  namespace: team-w
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      bb: web
+  template:
+    metadata:
+      labels:
+        bb: web
+    spec:
+      containers:
+      - name: uni-board
+        image: uk.icr.io/team-w/uni-board
+        ports:
+        - containerPort: 8080
