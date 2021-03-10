@@ -10,7 +10,8 @@ class UserRegisterForm(UserCreationForm):
 
     class Meta:
         model = User   #register going to save to User model
-        fields = ('username','email','password1','password2','terms_and_conditions')
+        fields = ['username','email','password1','password2','is_staff', 'terms_and_conditions']
+
 
 class EditProfileForm(forms.ModelForm):
     class Meta:
