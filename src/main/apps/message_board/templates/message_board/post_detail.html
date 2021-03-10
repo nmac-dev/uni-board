@@ -2,7 +2,7 @@
 {% block main_content %}
 <div class="row">
     <h1>
-        <a class="text-warning" href="{% url 'message_board' %}">Message Board</a>
+        <a class="fw-bold" style="text-decoration: none; color: black;" href="{% url 'message_board' %}">Message Board</a>
         | Post Details
     </h1>
 </div>
@@ -26,11 +26,16 @@
         </div>
     </div>
 </div>
-{% if user_post.post_user == request.user or request.user.is_staff == True %}
-    <div class="row">
-        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
-        <br class="col p-3"/>
-        <a class="col text-center p-3 rounded-pill bg-dark bg-gradient text-warning" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+<div class="row">
+    <div class="container-fluid">
+    <div class="col-xs">
+    {% if user_post.post_user == request.user %}
+        <a class="btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'update_post' user_post.post_id%}">Edit Post  </a>
+    {% endif %}
+    {% if user_post.post_user == request.user or request.user.is_staff == True %}
+        <a class="btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'delete_post' user_post.post_id%}">Delete Post</a>
+    {% endif %}
     </div>
-{% endif %}
+    </div>
+</div>
 {% endblock %}
