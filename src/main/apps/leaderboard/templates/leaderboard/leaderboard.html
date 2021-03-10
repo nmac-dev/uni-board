@@ -4,31 +4,26 @@
     <h1 class="fw-bold" style="text-decoration: none; color: black;"> leaderboard </h1>
 </div>
 
-<!--Load Posts-->
-<!--HREF_TO_ADD: 
-    href=" user_post.op_user "
--->
 
-<div class="row pt-3 pb-3 ">
-    <div class="col rounded-3 pb-3 bg-secondary">
+<div class="row pt-3  ">
+    <div class="col rounded-3  bg-secondary">
         <div class="row pt-4">
-            
             <p class="col text-start" style="text-decoration: none; color:white; font-size:28px;" >  Username:</p>
             <p class="col text-end" style="text-decoration: none; color:white; font-size:28px;">    points:</p>
         </div>
+        <div class="row pt-3 pb-6 ">
+            <div class="col rounded-3 pb-3 bg-dark">
+        {% for entrie in leaderboard %}
+                    {% if entrie.points > 0 %}
+                    <div class="row pt-4">
+                        <p class="col text-start" style="text-decoration: none; color:white; font-size:22px;" > {{ forloop.counter  }} | {{entrie.user}}</p>
+                        <p class="col text-end" style="text-decoration: none; color:white; font-size:22px;">    {{entrie.points}}</p>
+                    </div>
+                    {% endif %}  
+            {% endfor %}
+        {% endblock %} 
     </div>
+    
 </div>
-<div class="row pt-3 pb-3 ">
-    <div class="col rounded-3 pb-3 bg-dark">
-{% for entrie in leaderboard %}
-            {% if entrie.points > 0 %}
-            <div class="row pt-4">
-                <p class="col text-start" style="text-decoration: none; color:white; font-size:22px;" >  {{entrie.user}}</p>
-                <p class="col text-end" style="text-decoration: none; color:white; font-size:22px;">    {{entrie.points}}</p>
-            </div>
-            {% endif %}  
-    {% endfor %}
-{% endblock %} 
-
 </div>
 </div>
