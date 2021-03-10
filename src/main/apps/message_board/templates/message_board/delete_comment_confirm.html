@@ -3,7 +3,7 @@
 <div class="row ">
     <h1> 
         <a class="fw-bold" style="text-decoration: none; color: black;" href="{% url 'message_board' %}">Message Board</a>
-        | Delete Post
+        | Delete Comment
     </h1>
 </div>
 <div class="row pt-3">
@@ -12,10 +12,16 @@
 
         <fieldset class="row rounded-3 p-3 bg-dark text-center">
             <h3 class="text-warning">
-                Are you sure you wish to delete post:
+                Are you sure you wish to delete Comment:
             </h3>
-            <h1 class="fw-bold">
-                {{ object.post_subject }}
+            <h1 class="fw-bold"> 
+                {{ object.comment }}
+            </h1>
+            <h3 class="fw-bold text-info">
+                For post: 
+            </h3>
+            <h1>
+                {{ object.post }}
             </h1>
         </fieldset>
         <div class="row pt-3 d-flex justify-content-center">
