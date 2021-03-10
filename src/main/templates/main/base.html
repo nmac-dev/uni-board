@@ -12,7 +12,7 @@
     <!--CSS-->
     <link href="{% static 'main/css/main.css' %}" rel="stylesheet">
     
-    <link href="{% static 'main/icons/icons.html' %}" rel="stylesheet">
+    
     <!--Bootstrap_v5 CSS-->
     <link href="{% static 'main/bootstrap_v5/css/bootstrap.css' %}" rel="stylesheet">
     {% block extra_head_content %} 
@@ -48,7 +48,7 @@
         </div>
         <div class="col text-center">
             <div id="Logo">
-                <a href="/"><img src="{%static 'main/images/LogoV2_Plain.png' %}" style="width: 60px; padding: 1rem;" alt="UB"/></a>
+                <a href="{% url 'message_board' %}"><img src="{%static 'main/images/LogoV2_Plain.png' %}" style="width: 60px; padding: 1rem;" alt="UB"/></a>
             </div>
         </div>
         <div class="col text-end">

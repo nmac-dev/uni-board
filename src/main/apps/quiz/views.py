@@ -84,6 +84,7 @@ class My_Quizzes(LoginRequiredMixin, ListView):
     context_object_name = 'quiz_models'
     template_name       = 'quiz/my_quizzes.html'
 
+
 def Quiz_Results(response):
     
     quizTanken = get_object_or_404(Quiz_Model, quiz_id=response.POST.get('quiz_id'))
@@ -158,3 +159,4 @@ def Quiz_Results(response):
     args['message'] = message
 
     return render(response, "quiz/quiz_results.html", args)
+
