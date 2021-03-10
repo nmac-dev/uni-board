@@ -3,6 +3,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.urls                import reverse
 from .models                    import User_Post
 from django.http                import HttpResponseRedirect
+from django.db.models           import Q
 from main.apps.leaderboard.models import Leaderboard
 from django.views.generic import (
     ListView,
@@ -18,14 +19,14 @@ class Message_Board(ListView):
     ordering            = ['-post_date']                   # Orders to most recent date
     context_object_name = 'user_posts'
     template_name       = 'message_board/message_board.html'
-
+    
 class Post_Detail(DetailView):
     model = User_Post
     template_name   = "message_board/post_detail.html"
 
 class Create_Post(LoginRequiredMixin, CreateView):
     model           = User_Post
-    fields          = ['post_subject', 'post_content']
+    fields          = ['post_subject', 'post_content', 'post_tags']
     template_name   = "message_board/create_post.html"
     post_id = None
 
@@ -41,7 +42,7 @@ class Create_Post(LoginRequiredMixin, CreateView):
 
 class Update_Post(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model           = User_Post
-    fields          = ['post_subject', 'post_content']
+    fields          = ['post_subject', 'post_content', 'post_tags']
     template_name   = "message_board/update_post.html"
     post_id = None
 
@@ -84,6 +85,19 @@ class My_Posts(LoginRequiredMixin, ListView):
     context_object_name = 'user_posts'
     template_name       = 'message_board/my_posts.html'
 
+# Search Posts
+class Search_Posts(ListView):
+    model               = User_Post
+    ordering            = ['-post_date']                   # Orders to most recent date
+    context_object_name = 'user_posts'
+    template_name       = 'message_board/message_board.html'
+
+    def get_queryset(self):
+        
+        search_query = self.request.GET.get('search-text')
+        return User_Post.objects.filter(Q(post_tags__icontains=search_query) | Q(post_subject__icontains=search_query)).order_by('-post_date')
+
+# Like Posts
 def like_post(request, pk, current_url):
 
     try: 

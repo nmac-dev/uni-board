@@ -12,9 +12,10 @@ class User_Post(models.Model):
     post_user       = models.ForeignKey(    User, on_delete=models.CASCADE  )   # Remove post if op_user is deleted
     # Attributes
     post_subject    = models.CharField(     max_length=127                  )
-    post_content    = models.TextField(     max_length=2549                 )
+    post_content    = models.TextField(     max_length=2048                 )
     post_date       = models.DateTimeField( default=timezone.now            )
     post_updated    = models.DateTimeField( auto_now=True                   )
+    post_tags       = models.CharField(     max_length=1024, null=True, blank=True )
     likes           = models.ManyToManyField(User, related_name='post'      )
 
     def total_Likes(self):
