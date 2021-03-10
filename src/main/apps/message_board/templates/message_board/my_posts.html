@@ -6,7 +6,8 @@
         | My Posts 
     </h1>
 </div>
-<!--Edit or Delete Posts-->
+<!--Search Bar-->
+{% include 'message_board/search_post_snippet.html' %}
 <!--Load Posts-->
 {% for user_post in user_posts %}    
     {% if user_post.post_user == request.user %}
