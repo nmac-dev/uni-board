@@ -18,6 +18,7 @@ class Quiz_Home(ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/quiz_home.html'
+    paginate_by = 4
 
 class Quiz_Detail(DetailView):
     model = Quiz_Model
@@ -83,6 +84,7 @@ class My_Quizzes(LoginRequiredMixin, ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/my_quizzes.html'
+    paginate_by = 4
 
 
 def Quiz_Results(response):
