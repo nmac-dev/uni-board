@@ -10,6 +10,12 @@
 {% for quiz_model in quiz_models %}
     {% if quiz_model.creator == request.user %}
         {% include "quiz/quiz_feed_template.html" %}
+        <div class="row">
+        <div class="col-xs">
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'update_quiz' quiz_model.quiz_id%}">Edit Quiz  </a>
+            <a class="btn btn-dark bg-dark " style="text-decoration: none; background-color: #000; color: white;" href="{% url 'delete_quiz' quiz_model.quiz_id%}">Delete Quiz</a>
+        </div>
+        </div>
     {% endif %}
 {% endfor %}
 {% endblock %}

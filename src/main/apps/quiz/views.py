@@ -82,3 +82,4 @@ class My_Quizzes(LoginRequiredMixin, ListView):
     ordering            = ['-date']                   # Orders to most recent date
     context_object_name = 'quiz_models'
     template_name       = 'quiz/my_quizzes.html'
+
