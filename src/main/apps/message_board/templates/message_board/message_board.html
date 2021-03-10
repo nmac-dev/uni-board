@@ -12,10 +12,9 @@
         <a class="col-2 btn btn-dark bg-dark" style="text-decoration: none; background-color: #000;  color: white;" href="{% url 'my_posts' %}">My Posts</a>
     </div>
 </div>
+<!--Search Bar-->
+{% include 'message_board/search_post_snippet.html' %}
 <!--Load Posts-->
-<!--HREF_TO_ADD: 
-    href=" user_post.op_user "
--->
 {% for user_post in user_posts %}
         {% include "message_board/load_post_snippet.html" %}
     {% endfor %}
