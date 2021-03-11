@@ -51,3 +51,18 @@ class PostModelTest(TestCase):
         post = User_Post.objects.get(post_id=1)
         max_length = post._meta.get_field('post_content').max_length
         self.assertEqual(max_length, 2048)
+
+    def test_subject_value(self):
+        post = User_Post.objects.get(post_id=1)
+        field_value = post.post_subject
+        self.assertEqual(field_value, 'Title')
+
+    def test_content_value(self):
+        post = User_Post.objects.get(post_id=1)
+        field_value = post.post_content
+        self.assertEqual(field_value, 'Body')
+
+    def test_tags_value(self):
+        post = User_Post.objects.get(post_id=1)
+        field_value = post.post_tags
+        self.assertEqual(field_value, 'tag1')
