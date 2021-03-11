@@ -8,5 +8,6 @@ docker push uk.icr.io/team-w/uni-board:latest
 kubectl create -f deployment.yml
 kubectl create -f service.yml
 kubectl get service -n team-w
-sleep 30
+echo Wait: service launching...
+sleep 20
 kubectl get service -n team-w
