@@ -1,6 +1,5 @@
 #!/bin/bash
 cd src
-pwd
 docker build -t uni-board .
 ibmcloud cr login
 kubectl -n team-w delete pod,svc,deployment --all
