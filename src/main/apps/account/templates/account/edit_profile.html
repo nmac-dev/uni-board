@@ -5,9 +5,10 @@
         {% if user.is_authenticated %}
         <h1 style="text-decoration: none; color: black;">{{ user.username }}</h1>
         <div class="container">
-            <form method="POST">
+            <form method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{form.as_p}}
+                {{p_form.as_p}}
                 <button class="btn btn-dark bg-dark" type="submit">Submit</button>
             </form>
         </div>
