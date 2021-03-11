@@ -41,6 +41,16 @@
                     <!--Dates-->
                     <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
                     <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
+                    <hr>
+                    <!--Load Tags-->
+                    <p class="col text-start">  Tags:
+                    {% load uniboard_tags %}
+                    {% with user_post.post_tags|split:" " as tags %}
+                        {% for tag in tags %}
+                            #{{ tag }}
+                        {% endfor %}
+                    {% endwith %}
+                    </p>
                 </div>
             </div>
         </div>

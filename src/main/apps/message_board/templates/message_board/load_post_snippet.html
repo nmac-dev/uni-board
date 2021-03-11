@@ -23,22 +23,14 @@
             <p class="col text-start">  Created on: {{ user_post.post_date      |date:"d F, Y" }}</p>
             <p class="col text-end">    Last Edit:  {{ user_post.post_updated   |date:"d F, Y" }}</p>
             <hr>
+            <!--Load Tags-->
             <p class="col text-start">  Tags:
-            {% comment %} {% for tag in user_post.post_tags|slice:":" %}
-                {% if tag == ' ' %}
-                    &nbsp;#
-                {% endif %}
-                {{tag}}
-            {% endfor %} {% endcomment %}
             {% load uniboard_tags %}
             {% with user_post.post_tags|split:" " as tags %}
                 {% for tag in tags %}
                     #{{ tag }}
                 {% endfor %}
             {% endwith %}
-            {% comment %} {% for tag in user_post.post_tags|split:" " %}
-                &nbsp;#{{tag}}
-            {% endfor %} {% endcomment %}
             </p>
         </div>
     </div>
