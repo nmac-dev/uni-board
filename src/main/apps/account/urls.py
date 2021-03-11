@@ -2,6 +2,7 @@ from django.urls import path, include
 from main.apps.account import views as user_views
 from django.contrib.auth import views as auth_views
 
+
 from . import views
 
 urlpatterns = [
@@ -24,4 +25,3 @@ urlpatterns = [
     path('reset_password_complete/', auth_views.PasswordResetCompleteView.as_view(template_name='account/reset_password_complete.html'),              
     name ='password_reset_complete'),
 ]
-
