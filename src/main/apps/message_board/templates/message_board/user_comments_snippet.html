@@ -7,13 +7,14 @@
         <div class="row pt-2 pb-2">
             <div class="col rounded-3 bg-dark">
                 <div class="row pt-2 pb-1">
-                    <img class="col-1 rounded"></img>
-                    <a class="col-1 rounded text-light text-start" style="text-decoration: none;" href="#"> {{ user_comment.cmnt_user }} </a>
-                    {% if user_post.post_user == request.user or request.user.is_staff == True %}
-                        <div class="col align-self-end">
-                            <a class="btn btn-outline-light" style="text-decoration: none;" href="{% url 'delete_comment' user_comment.cmnt_id %}">Delete Comment</a>
-                        </div>
-                    {% endif %}
+                    <div class="col-xs">
+                        <a class="rounded text-light text-start" style="text-decoration: none;" href="#"> {{ user_comment.cmnt_user }} </a>
+                        {% if user_post.post_user == request.user or request.user.is_staff == True %}
+                        
+                        <a class="mx-2 btn btn-outline-light" style="text-decoration: none;" href="{% url 'delete_comment' user_comment.cmnt_id %}">Delete Comment</a>
+                        
+                        {% endif %}
+                    </div>
                 </div>
                 <hr class="text-info">
                 <div class="row">
