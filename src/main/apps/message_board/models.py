@@ -28,8 +28,8 @@ class User_Comment(models.Model):
     # PK
     cmnt_id     = models.AutoField(     primary_key=True    )
     # FK
-    cmnt_user   = models.ForeignKey(    User, on_delete=models.CASCADE                  )
-    post        = models.ForeignKey(       User_Post, related_name="comments", on_delete=models.CASCADE  )
+    cmnt_user   = models.ForeignKey(    User, on_delete=models.CASCADE  )
+    post        = models.ForeignKey(    User_Post, related_name="comments", on_delete=models.CASCADE    )
     # Attributes
     date        = models.DateTimeField( default=timezone.now    )
     comment     = models.TextField(     max_length=1024         )
