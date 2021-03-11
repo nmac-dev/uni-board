@@ -1,0 +1,638 @@
+[
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$zWN0FuzR361j$FhccKCZlcquGXBi7kqC+BuQGnL1DSmMaOCjl6fWOdL0=",
+            "last_login": "2021-02-23T15:41:42.878Z",
+            "is_superuser": false,
+            "username": "will_t",
+            "first_name": "",
+            "last_name": "",
+            "email": "will.t@exeter.ac.uk",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-02-23T15:41:36.340Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$r6pdACSOmvVP$OURGYOaM4gQpwssH8E6OOkiWKIZT+APwaXbzdoSdJWE=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "nmac",
+            "first_name": "",
+            "last_name": "",
+            "email": "nmac@exeter.ac.uk",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-23T15:42:23.115Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$PetISPHW5qbP$HHG/6AHX+USEs6qhXnoQF8qkcewMXrtn9r0ssaKM3DI=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "george_badman",
+            "first_name": "",
+            "last_name": "",
+            "email": "george.badman@exeter.ac.uk",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2021-02-23T15:42:37.297Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "auth.user",
+        "fields": {
+            "password": "pbkdf2_sha256$216000$2S6QDhnnHIm5$Fj0vg5guJFumvi7a/CBw37kz0dOOt73Nl6fB++0gJm4=",
+            "last_login": null,
+            "is_superuser": false,
+            "username": "masterwade",
+            "first_name": "User",
+            "last_name": "Number three",
+            "email": "masterwade@exeter.ac.uk",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2021-02-23T15:42:54Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+
+
+
+
+
+
+
+
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 2,
+            "post_subject": "Welcome!",
+            "post_content": "Hey I'd like to say welcome to the new site, hope you guys think it looks cool.",
+            "post_date": "2021-03-09T18:10:20Z",
+            "post_updated": "2021-03-09T18:10:20Z",
+            "post_tags": "welcome hello newsite cool"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 3,
+            "post_subject": "Hey! Anyone studying computer science?",
+            "post_content": "Just wondering if anyone here studies computer science. It would be cool to discuss how much we're all drowning in work and have super tight deadlines. Do guys think maybe they should space out the deadlines a bit?",
+            "post_date": "2021-03-11T18:10:20Z",
+            "post_updated": "2021-02-26T18:10:20Z",
+            "post_tags": "computerscience cs imdrowing toomuchwork helpme"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 3,
+            "post_subject": "Any Electrical Engineering Students?",
+            "post_content": "Hey I study CS and wanted to talk about the subjects you electrical engineers study. Maybe we could trade lectures or something?",
+            "post_date": "2021-03-10T18:10:20Z",
+            "post_updated": "2021-02-26T18:10:20Z",
+            "post_tags": "ee cs electricalengineering engineer trade"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 1,
+            "post_subject": "Students Please Help",
+            "post_content": "Hello I am Will a lecturer at Exeter. I would like to ask for feedback about issues you faced this semster, Thank You.",
+            "post_date": "2021-01-08T18:10:20Z",
+            "post_updated": "2021-01-08T18:10:20Z",
+            "post_tags": "academic exeter feedback"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 3,
+            "post_subject": "Missing Backpack",
+            "post_content": "Has anyone seen a light blue Superdry backpack? I think I left it in Newman Purple. Thanks In advance.",
+            "post_date": "2021-03-03T19:22:14Z",
+            "post_updated": "2021-03-03T19:22:14Z",
+            "post_tags": "cs lost&found newman"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 4,
+            "post_subject": "Leaderboards Help (updated)",
+            "post_content": "Hey guys welcome to todays post, please SMASH that like button to help me get to the top of the leaderboards! (update) THANKS FOR ALL THE LIKES, I'M AT THE TOP!",
+            "post_date": "2021-02-12T19:14:22Z",
+            "post_updated": "2021-02-14T19:22:14Z",
+            "post_tags": "leaderboards smashthatlike givemelikes"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 2,
+            "post_subject": "Loud Bang?",
+            "post_content": "Anyone just hear that loud bang a few days ago? It sounded like a bomb going off or something.",
+            "post_date": "2021-03-10T13:35:40Z",
+            "post_updated": "2021-03-10T13:35:40Z",
+            "post_tags": "bang loud bomb?"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 3,
+            "post_subject": "Lost my Backpack again",
+            "post_content": "Hey so I lost my light blue Superdry backpack again. Think it was also in Newman Purple. Maybe someone is just taking it for fun? Is this a joke I'm not getting or something?",
+            "post_date": "2021-03-08T12:56:20Z",
+            "post_updated": "2021-03-08T12:56:20Z",
+            "post_tags": "FunnyNotFunny lost&found BackpackBoi"
+        }
+    },
+    {
+        "model": "message_board.user_post",
+        "fields": {
+            "post_user": 3,
+            "post_subject": "Anyone have a ladder?",
+            "post_content": "So I found my light blue Superdry backpack... but its the roof a build. Not sure how long it's been there. Hope it hasn't got wet. I had a paper mache project in it. Any help to get it down would be nice. :)",
+            "post_date": "2021-03-12T10:27:30Z",
+            "post_updated": "2021-03-12T10:27:30Z",
+            "post_tags": "BackpackBoi ladder #HowdItGetThere"
+        }
+    },
+
+
+
+
+
+
+
+
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 1,
+            "comment": "Hey! Thanks for the welcome, loving the site!",
+            "date": "2021-03-09T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 1,
+            "comment": "Thank you!",
+            "date": "2021-03-09T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 1,
+            "comment": "I like it, smooth design",
+            "date": "2021-03-09T18:10:20Z"
+        }
+    },
+
+    
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 2,
+            "comment": "Yeah I totally agree! Feel like I'm in the middle of the ocean with no life jacket",
+            "date": "2021-03-10T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 2,
+            "comment": "Wow... This!",
+            "date": "2021-03-10T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 1,
+            "post_id": 2,
+            "comment": "I hope you are are doing alright, maybe 9 deadlines over 6 weeks is a bit much... we will bring up this up in the next set of meetings.",
+            "date": "2021-03-10T18:10:20Z"
+        }
+    },
+
+
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 1,
+            "post_id": 3,
+            "comment": "Mmm glad you're interested in other degree subjects. I'll speak to the department and see if we can get an event for mixing EE and CS students",
+            "date": "2021-02-26T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 3,
+            "comment": "I'm also CS, always had an interest in learning more circuits and logic!",
+            "date": "2021-02-26T18:10:20Z"
+        }
+    },
+
+    
+    
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 4,
+            "comment": "Thank you for asking. I would say there has been WAYYY more deadlines this semester and it's a bit much.",
+            "date": "2021-01-08T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 4,
+            "comment": "Noted. This will be brought upi in the next meeting",
+            "date": "2021-01-08T18:10:20Z"
+        }
+    },
+
+
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 5,
+            "comment": "I was there earlier today! But didn't see a backpack sadly.",
+            "date": "2021-03-03T19:22:14Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 5,
+            "comment": "Aww damn, well thanks for letting me know",
+            "date": "2021-03-03T19:22:14Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 5,
+            "comment": "I have put in a lost property report for you",
+            "date": "2021-03-04T19:22:14Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 5,
+            "comment": "Forgot to do that. Thank you!",
+            "date": "2021-03-04T19:22:14Z"
+        }
+    },
+
+
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 6,
+            "comment": "Smash That Like Button!!!",
+            "date": "2021-02-12T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 6,
+            "comment": "TOO THE MOOOOON",
+            "date": "2021-02-12T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 6,
+            "comment": "Oh really? You've resorted to begging now haha",
+            "date": "2021-02-12T18:10:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 1,
+            "post_id": 6,
+            "comment": "You have my like!",
+            "date": "2021-02-12T18:10:20Z"
+        }
+    },
+
+
+    
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 7,
+            "comment": "Umm did you not realise the bomb squad destroyed a WWII bomb today?",
+            "date": "2021-03-10T13:35:40Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 7,
+            "comment": "Omg what?!? I missed that... Bet it would've looked cool",
+            "date": "2021-03-10T13:35:40Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 7,
+            "comment": "Dude are you living under a rock or something?",
+            "date": "2021-03-10T13:35:40Z"
+        }
+    },
+
+    
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 8,
+            "comment": "Dude again? Wow you really need to watch over that bag haha",
+            "date": "2021-03-8T12:56:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 8,
+            "comment": "Was there again today... Didn't see any bag, Sorry",
+            "date": "2021-03-8T12:56:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 8,
+            "comment": "I've made a lost property report... again. ",
+            "date": "2021-03-08T12:56:20Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 8,
+            "comment": "Thanks again, I really hope it will turn up again. It's my favorite bag!",
+            "date": "2021-03-08T12:56:20Z"
+        }
+    },
+
+    
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 2,
+            "post_id": 9,
+            "comment": "I don't have a ladder but I'm enjoy these backpack boi adventures haha",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 4,
+            "post_id": 9,
+            "comment": "Oh my building has a ladder you can borrow!",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 9,
+            "comment": "Nice that you so much I'll pop over and grab it!",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 9,
+            "comment": "Actually son't worry, campus security are getting it for me",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 9,
+            "comment": "Maybe consider asking them to check security footage for the culprit",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 9,
+            "comment": "Good idea, I'll speak to them after my lectures tomorrow",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+    {
+        "model": "message_board.user_comment",
+        "fields": {
+            "cmnt_user_id": 3,
+            "post_id": 9,
+            "comment": "Any updates? You've been gone for 4 days",
+            "date": "2021-03-12T10:27:30Z"
+        }
+    },
+
+
+
+
+
+
+
+    {
+        "model": "quiz.quiz_model",
+        "pk": 1,
+        "fields": {
+            "creator": 1,
+            "title": "Fall of Constantinople",
+            "desc": "Factual Questions about the fall of Constantinople",
+            "date": "2021-03-11T11:28:07.422Z",
+            "Question_1": "When was the fall of Constantinople?",
+            "Question_1_Option_1": "1556",
+            "Question_1_Option_2": "1453",
+            "Question_1_Option_3": "1639",
+            "Question_1_Option_4": "900",
+            "Question_1_Correct_Answer": 2,
+            "Question_2": "Who was ruler of Constantinople when it fell?",
+            "Question_2_Option_1": "Mehmed I",
+            "Question_2_Option_2": "Mehmed II",
+            "Question_2_Option_3": "Mehmed IV",
+            "Question_2_Option_4": "Mehmed VI",
+            "Question_2_Correct_Answer": 1,
+            "Question_3": "What Empire was Constantinople part of before it fell?",
+            "Question_3_Option_1": "The Byzantine Empire",
+            "Question_3_Option_2": "The Ottoman Empire",
+            "Question_3_Option_3": "The Roman Empire",
+            "Question_3_Option_4": "Srivijaya Empire",
+            "Question_3_Correct_Answer": 1,
+            "Question_4": "",
+            "Question_4_Option_1": null,
+            "Question_4_Option_2": null,
+            "Question_4_Option_3": null,
+            "Question_4_Option_4": null,
+            "Question_4_Correct_Answer": null,
+            "Question_5": "",
+            "Question_5_Option_1": null,
+            "Question_5_Option_2": null,
+            "Question_5_Option_3": null,
+            "Question_5_Option_4": null,
+            "Question_5_Correct_Answer": null,
+            "Question_6": "",
+            "Question_6_Option_1": null,
+            "Question_6_Option_2": null,
+            "Question_6_Option_3": null,
+            "Question_6_Option_4": null,
+            "Question_6_Correct_Answer": null,
+            "Question_7": "",
+            "Question_7_Option_1": null,
+            "Question_7_Option_2": null,
+            "Question_7_Option_3": null,
+            "Question_7_Option_4": null,
+            "Question_7_Correct_Answer": null,
+            "Question_8": "",
+            "Question_8_Option_1": null,
+            "Question_8_Option_2": null,
+            "Question_8_Option_3": null,
+            "Question_8_Option_4": null,
+            "Question_8_Correct_Answer": null,
+            "Question_9": "",
+            "Question_9_Option_1": null,
+            "Question_9_Option_2": null,
+            "Question_9_Option_3": null,
+            "Question_9_Option_4": null,
+            "Question_9_Correct_Answer": null,
+            "Question_10": "",
+            "Question_10_Option_1": null,
+            "Question_10_Option_2": null,
+            "Question_10_Option_3": null,
+            "Question_10_Option_4": null,
+            "Question_10_Correct_Answer": null
+        }
+    },
+    {
+        "model": "quiz.quiz_model",
+        "pk": 2,
+        "fields": {
+            "creator": 1,
+            "title": "Atomic Structure quiz",
+            "desc": "This quiz is about the basic atomic structure of atoms",
+            "date": "2021-03-11T11:37:39.731Z",
+            "Question_1": "Carbon has two isotopes. These atoms have:",
+            "Question_1_Option_1": "The same number of protons, but different numbers of electrons",
+            "Question_1_Option_2": "The same number of neutrons, but different numbers of electrons",
+            "Question_1_Option_3": "The same number of electrons, but different numbers of protons",
+            "Question_1_Option_4": "The same number of protons, but different numbers of neutrons",
+            "Question_1_Correct_Answer": 4,
+            "Question_2": "The protons of an atom are found:",
+            "Question_2_Option_1": "in the nucleus of the atom",
+            "Question_2_Option_2": "in orbit around the outside of the nucleus",
+            "Question_2_Option_3": "dotted throughout the atom",
+            "Question_2_Option_4": "in lines radiating out from the nucleus",
+            "Question_2_Correct_Answer": 1,
+            "Question_3": "The electrons are found:",
+            "Question_3_Option_1": "in the nucleus of the atom",
+            "Question_3_Option_2": "in orbit around the outside of the nucleus",
+            "Question_3_Option_3": "dotted throughout the atom",
+            "Question_3_Option_4": "in lines radiating out from the nucleus",
+            "Question_3_Correct_Answer": 2,
+            "Question_4": "The atomic number of an element tells us:",
+            "Question_4_Option_1": "the number of electrons orbiting the nucleus",
+            "Question_4_Option_2": "the number of protons orbiting the nucleus",
+            "Question_4_Option_3": "the number of neutrons orbiting the nucleus",
+            "Question_4_Option_4": "the number of electrons in the nucleus",
+            "Question_4_Correct_Answer": 1,
+            "Question_5": "The numbers in the options below represent the masses of the three sub-atomic particles. Pick the correct combination:",
+            "Question_5_Option_1": "Proton 1 Neutron 1 Electron 0",
+            "Question_5_Option_2": "Proton 0 Neutron 1 Electron 1",
+            "Question_5_Option_3": "Proton 1 Neutron 1 Electron 1",
+            "Question_5_Option_4": "Proton 1 Neutron 0 Electron 1",
+            "Question_5_Correct_Answer": 1,
+            "Question_6": "The mass number of an element tells us:",
+            "Question_6_Option_1": "the number of neutrons plus protons",
+            "Question_6_Option_2": "the number of neutrons plus electrons",
+            "Question_6_Option_3": "the number of protons plus electrons",
+            "Question_6_Option_4": "the number of protons in the nucleus",
+            "Question_6_Correct_Answer": 1,
+            "Question_7": "",
+            "Question_7_Option_1": null,
+            "Question_7_Option_2": null,
+            "Question_7_Option_3": null,
+            "Question_7_Option_4": null,
+            "Question_7_Correct_Answer": null,
+            "Question_8": "",
+            "Question_8_Option_1": null,
+            "Question_8_Option_2": null,
+            "Question_8_Option_3": null,
+            "Question_8_Option_4": null,
+            "Question_8_Correct_Answer": null,
+            "Question_9": "",
+            "Question_9_Option_1": null,
+            "Question_9_Option_2": null,
+            "Question_9_Option_3": null,
+            "Question_9_Option_4": null,
+            "Question_9_Correct_Answer": null,
+            "Question_10": "",
+            "Question_10_Option_1": null,
+            "Question_10_Option_2": null,
+            "Question_10_Option_3": null,
+            "Question_10_Option_4": null,
+            "Question_10_Correct_Answer": null
+        }
+    }
+]
