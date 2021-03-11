@@ -52,3 +52,23 @@ class QuizModelTest(TestCase):
         quiz = Quiz_Model.objects.get(quiz_id=1)
         max_length = quiz._meta.get_field('Question_1_Option_1').max_length
         self.assertEqual(max_length, 2048)
+
+    def test_question_value(self):
+        quiz = Quiz_Model.objects.get(quiz_id=1)
+        field_value = quiz.Question_1
+        self.assertEqual(field_value, 'q1')
+
+    def test_title_value(self):
+        quiz = Quiz_Model.objects.get(quiz_id=1)
+        field_value = quiz.title
+        self.assertEqual(field_value, 'Title')
+
+    def test_desc_value(self):
+        quiz = Quiz_Model.objects.get(quiz_id=1)
+        field_value = quiz.desc
+        self.assertEqual(field_value, 'Description')
+
+    def test_answer_value(self):
+        quiz = Quiz_Model.objects.get(quiz_id=1)
+        field_value = quiz.Question_1_Option_1
+        self.assertEqual(field_value, 'option1')
