@@ -16,7 +16,8 @@ class QuizModelTest(TestCase):
             creator=user,
             date=datetime.now(),
             Question_1='q1',
-            Question_1_Option_1='option1')
+            Question_1_Option_1='option1',
+            Question_1_Correct_Answer=1)
 
     def test_title_label(self):
         quiz = Quiz_Model.objects.get(quiz_id=1)
@@ -72,3 +73,8 @@ class QuizModelTest(TestCase):
         quiz = Quiz_Model.objects.get(quiz_id=1)
         field_value = quiz.Question_1_Option_1
         self.assertEqual(field_value, 'option1')
+
+    def test_correct_answer_value(self):
+        quiz = Quiz_Model.objects.get(quiz_id=1)
+        field_value = quiz.Question_1_Correct_Answer
+        self.assertEqual(field_value, 1)
