@@ -50,6 +50,7 @@ Creates a new "app" (kinda like a module) in the src directory
 
 Load an admin user with username and password "admin", and loads in example posts  
 `loaddata test_data.json`  
+
 Run unit tests  
 `test`  
 ### IBM Cloud
