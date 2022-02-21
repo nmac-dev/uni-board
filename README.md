@@ -3,7 +3,6 @@
 A Software Engineering group project using Agile Methodologies to create a messaging board for students and academics.
 ## Contents  
  - [Features](#Features)
- - [TODO](#TODO)
  - [Tools](#Tools)
  - [Operation](#Operation)
    - [Github](##Github)
