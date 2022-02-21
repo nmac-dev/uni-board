@@ -1,6 +1,6 @@
 # Uni Board  
 
-A messaging board for students and academics
+A Software Engineering group Project using Agile Methodologies to create a messaging board for students and academics.
 ## Contents  
  - [Features](#Features)
  - [TODO](#TODO)
